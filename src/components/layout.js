@@ -16,6 +16,8 @@ export default ({ children }) => {
     `
   )
   return (
+    <div>
+    <div className="background-div"></div>
     <div className="site-wrapper">
       <header className="site-header">
         <div className="site-title">
@@ -27,6 +29,8 @@ export default ({ children }) => {
       <footer className="site-footer">
         <p>&copy; {new Date().getFullYear()} Delog &bull; Crafted with <span role="img" aria-label="love">❤️</span> by <a href="https://w3layouts.com">W3Layouts</a></p>
       </footer>
+
+    </div>
     </div>
   )
 }

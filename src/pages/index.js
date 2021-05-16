@@ -18,6 +18,8 @@ const IndexPage = ({
 
   return (
     <Layout>
+        <div className="background-div"></div>
+
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
@@ -26,6 +28,9 @@ const IndexPage = ({
       <h2>Blog Posts &darr;</h2>
       <div className="grids">
         {Posts}
+      </div>
+      <div className="background-div">
+
       </div>
     </Layout>
   )

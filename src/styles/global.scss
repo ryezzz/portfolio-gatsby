@@ -171,7 +171,7 @@ a {
     margin-bottom: 32px;
     text-align: center;
   }
-  
+
 }
 .post-thumbnail {
   text-align: center;
@@ -298,13 +298,13 @@ a {
   }
 }
 /* Portrait and Landscape */
-@media only screen 
+@media only screen
 and (min-width: 768px) {
 .grids {
   grid-template-columns: 1fr 1fr;
 }
 }
-@media only screen 
+@media only screen
   and (min-width: 1024px) {
   .grids {
     grid-template-columns: 1fr 1fr 1fr;
@@ -325,7 +325,14 @@ body.dark {
   .gg-moon {
     display: none;
   }
+  background-position: fixed;
+  background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
+  background-size: 300%;
+  background-color: rgba(0,0,0,1);
+	background-repeat: repeat;
+	z-index: -2;
 }
+
 body.light {
   .gg-sun {
     display: none;
@@ -395,6 +402,22 @@ body.light {
     border: 2px solid;
     border-bottom-color: transparent
 }
+
+
+.backround-div {
+	margin-top: -20%;
+	width: 100%;
+	height: 150%;
+	position: absolute;
+	background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
+	background-size: 300%;
+  background-color: black;
+	background-repeat: repeat;
+	z-index: -2;
+    opacity: 0.7;
+}
+
+
 .gg-moon::after {
     content: "";
     position: absolute;
