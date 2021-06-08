@@ -26,7 +26,8 @@
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-masonry-css": "^1.0.16"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -42,7 +43,7 @@
   },
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-    "develop": "gatsby develop",
+    "develop": "kill -9 $(lsof -i:8000 -t) | gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn start",
     "serve": "gatsby serve",

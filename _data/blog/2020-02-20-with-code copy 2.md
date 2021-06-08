@@ -1,7 +1,16 @@
+---
+template: BlogPost
+path: /with-code
+date: 2020-02-20T15:08:12.174Z
+title: Code with Syntax Highlighting with PrismJS
+thumbnail: /assets/image-2.jpg
+---
+
+### Code Highlighting
+```javascript
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/navigation"
-import 'prismjs/themes/prism-okaidia.css';
 
 export default ({ children }) => {
   const data = useStaticQuery(
@@ -16,22 +25,15 @@ export default ({ children }) => {
     `
   )
   return (
-    <div>
-    <div className="background-div"></div>
-
-
+    <div className="site-wrapper">
       <header className="site-header">
         <div className="site-title">
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </div>
         <Navigation />
       </header>
-
       {children}
-      <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Delog &bull; Crafted with <span role="img" aria-label="love">❤️</span> by <a href="https://w3layouts.com">W3Layouts</a></p>
-      </footer>
-
     </div>
   )
 }
+```
