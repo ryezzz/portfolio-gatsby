@@ -228,7 +228,7 @@ a {
 .card {
   display: grid;
   // background-color: var(--card-bg);
-  max-height: 100px;
+  // max-height: 500px;
   background-color: rgba(0,0,0,.5);
   border-radius: 0px;
   border: 1px solid var(--card-bdr);
@@ -241,6 +241,7 @@ a {
   }
   > a img {
     display: block;
+    width:100%;
   }
   > header {
     padding: 24px;
@@ -307,7 +308,7 @@ a {
   grid-gap: 32px;
   &.-contact {
     .post-thumbnail {
-      min-height: 240px !important;
+      // min-height: 240px !important;
     }
   }
 }
