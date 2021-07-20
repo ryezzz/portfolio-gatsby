@@ -66,8 +66,7 @@ const IndexPage = ({
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
-      <h2>Blog Posts &darr;</h2>
-      <div>
+      {/* <h2>Blog Posts &darr;</h2> */}
 
       <Masonry
   breakpointCols={3}
@@ -81,15 +80,11 @@ const IndexPage = ({
                 <div className="card-body ">
                   {post}
                 </div>
-                <div className="card-footer">
-                  <p className="card-text text-center text-capitalize text-primary">Shot by: {author}</p>
-                </div>
               </div>
             )
           })}
 </Masonry>
 
-      </div>
 
     </Layout>
   )

@@ -20,7 +20,7 @@ export default () => (
         <div className="headline">{data.site.siteMetadata.home.title}</div>
         <div className="primary-content"> {TypeOn(data.site.siteMetadata.home.description)}</div>
 
-                <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>
+            {/*    <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>*/}
 
       </div>
     )}

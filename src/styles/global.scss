@@ -29,7 +29,7 @@ body.light {
   --input-bg: var(--background);
 }
 body.dark {
-  --primary-color: #00fbffcd;
+  --primary-color: #00fbff;
   --primary-text-color: #fff;
   --featured-bg: #00806d;
   --featured-text: #fff;
@@ -63,6 +63,9 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+.site-content {
+  padding: 5%;
 }
 .site-wrapper {
   padding: 32px;
@@ -107,10 +110,18 @@ a {
 .site-header {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
-  background: var(--site-header);
+  padding: 0px 0;
+  // background: var(--site-header);
   margin-bottom: 32px;
   align-items: center;
+}
+
+.post-title-container {
+  background-color: rgba(250, 250, 250, 0);}
+.post-title, .post-meta{
+  padding-left: 5px;
+  padding-right: 5px;
+
 }
 .site-title a {
   color: var(--primary-color);
@@ -123,7 +134,7 @@ a {
   max-width: 980px;
 }
 .headline {
-  font-size: 7em;
+  font-size: 5em;
   font-weight: 900;
   margin-bottom: 0.5rem;
 }
@@ -227,14 +238,12 @@ a {
 }
 .card {
   display: grid;
-  // background-color: var(--card-bg);
-  // max-height: 500px;
+  margin: 0px;
   background-color: rgba(0,0,0,.5);
   border-radius: 0px;
   border: 1px solid var(--card-bdr);
-  box-shadow: 0 0 30px var(--card-shadow);
-  overflow: hidden;
-  margin-bottom: 5px;
+  // box-shadow: 0 0 30px var(--card-shadow);
+  // overflow: hidden;
   line-height: 1.5;
   &:hover .post-link {
     color: var(--primary-color);
@@ -244,7 +253,7 @@ a {
     width:100%;
   }
   > header {
-    padding: 24px;
+    padding: 0px;
   }
   > h2:first-child {
     margin: 0 0 0.5rem 0;
@@ -269,10 +278,13 @@ a {
 .site-footer {
   text-align: center;
   margin: 90px 0 16px;
-  color: #666;
-  a {
-    font-weight: 700;
-  }
+  color: #fff;
+  font-weight: 700;
+  background-color: rgba(0,0,0,.5);
+
+  // a {
+  //   font-weight: 700;
+  // }
 }
 .form-container {
   background-color: var(--contact-bg);
@@ -305,7 +317,7 @@ a {
 }
 .two-grids {
   display: grid;
-  grid-gap: 32px;
+  grid-gap: 0px;
   &.-contact {
     .post-thumbnail {
       // min-height: 240px !important;
@@ -453,11 +465,11 @@ body.light {
   width: auto;
 }
 .my-masonry-grid_column {
-  padding-right: 5px; /* gutter size */
+  // padding-right: 5px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
 .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
