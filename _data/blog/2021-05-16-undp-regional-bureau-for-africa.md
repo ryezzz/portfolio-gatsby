@@ -3,7 +3,7 @@ template: BlogPost
 path: /undp
 date: 2021-05-16T19:26:52.145Z
 title: UNDP Regional Bureau for Africa
-thumbnail: /assets/Full-size-undp.jpg
+thumbnail: /assets/screen-shot-2021-07-20-at-2.03.09-pm.png
 ---
 [Explore the visualization.](https://ryezzz.github.io/100_days_data_visualization/day_23/)
 
