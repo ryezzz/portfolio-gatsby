@@ -72,7 +72,9 @@ a {
   max-width: 1140px;
   margin: 0 auto;
   img {
-    max-width: 50px;
+    max-width: 500px;
+    max-height: 90vh;
+    object-fit: cover;
   }
 }
 .background-div{
@@ -352,11 +354,11 @@ and (min-width: 768px) {
 
 // theme-changer
 .theme-changer {
-  display: none;
+  visibility: hidden;
 }
 body.dark {
   .gg-moon {
-    display: none;
+    visibility: hidden;
   }
 
 	z-index: -2;
@@ -364,10 +366,11 @@ body.dark {
 
 body.light {
   .gg-sun {
-    display: none;
+    visibility: hidden;
   }
 }
 .mode-container {
+  visibility: hidden;
   width: 24px;
   height: 24px;
   margin-left: 20px;
