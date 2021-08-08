@@ -87,9 +87,11 @@ img {
   height: 100vh;
   position: fixed;
   z-index: -100;
- background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
+//  background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
+background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby/master/src/images/map2.svg');
+
   opacity: .5;
-  background-size: 5000px;
+  background-size: 120%;
 
 }
 .navigation {
