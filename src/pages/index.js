@@ -59,7 +59,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-          {/* <div className="site-wrapper"> */}
+        // <div className="site-wrapper">
 
       <HeroHeader></HeroHeader>
       <Helmet>
@@ -85,7 +85,7 @@ const IndexPage = ({
           })}
 </Masonry>
 
-
+// </div>
     </Layout>
   )
 }
