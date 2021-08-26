@@ -64,6 +64,16 @@ collections:
         name: metaDescription
         widget: text
         required: false
+      - label: Exploration
+        name: exploration
+        widget: boolean
+        default: true
+        required: false
+      - label: Corporate
+        name: corporate
+        widget: boolean
+        default: false
+        required: false
       - label: Featured Image
         name: thumbnail
         widget: image

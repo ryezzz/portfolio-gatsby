@@ -27,10 +27,11 @@ export default ({ children }) => {
         <Navigation />
       </header>
 
+
       {children}
-      <footer className="site-footer">
+      {/* <footer className="site-footer">
         <p>&copy; {new Date().getFullYear()} Liz Cal </p>
-      </footer>
+      </footer> */}
       </div>
     </div>
   )

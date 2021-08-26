@@ -21,6 +21,9 @@ export default () => (
         <div className="primary-content"> {TypeOn(data.site.siteMetadata.home.description)}</div>
 
             {/*    <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>*/}
+            <button>Data Experiments </button>
+            <button>Corporate Work</button>
+            <p></p>
 
       </div>
     )}

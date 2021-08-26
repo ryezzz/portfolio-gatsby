@@ -11,10 +11,11 @@ import { useFetch, useInfiniteScroll, useLazyLoading } from '../hooks/customHook
 
 //...
 const breakpointColumnsObj = {
-  default: 2,
-  1100: 2,
-  700: 1,
+  default: 5,
+  1800: 5,
+  1500: 3,
   500: 1
+
 };
 
 const IndexPage = ({
@@ -57,7 +58,10 @@ const IndexPage = ({
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
 
+
+  console.log("Posts", Posts)
   return (
+    <>
     <Layout>
 
       <HeroHeader></HeroHeader>
@@ -67,24 +71,28 @@ const IndexPage = ({
       </Helmet>
       {/* <h2>Blog Posts &darr;</h2> */}
 
-      <Masonry
-  breakpointCols={3}
-  breakpointCols={breakpointColumnsObj}
-  className="my-masonry-grid"
-  columnClassName="my-masonry-grid_column">
-     {Posts.map((post, index) => {
-            const { author, download_url } = post
-            return (
-              <div key={index} className="card">
-                <div className="card-body ">
-                  {post}
-                </div>
-              </div>
-            )
-          })}
-</Masonry>
 
-    </Layout>
+
+
+    <Masonry
+    breakpointCols={2}
+    breakpointCols={breakpointColumnsObj}
+    className="my-masonry-grid"
+    columnClassName="my-masonry-grid_column">
+       {Posts.map((post, index) => {
+              const { author, download_url } = post
+              return (
+                <div key={index}>
+                  <div className="card-body ">
+                    {post}
+                  </div>
+                </div>
+              )
+            })}
+  </Masonry>
+  </Layout>
+
+    </>
   )
 }
 
