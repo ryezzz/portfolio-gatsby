@@ -4,6 +4,7 @@ path: /bugs
 date: 2021-06-06T17:26:26.617Z
 title: Collective Decision-Making in Cockroaches
 metaDescription: d3.js, JavaScript
+exploration: true
 thumbnail: /assets/roachesteaser.jpg
 ---
 [Play with the visualization](https://ryezzz.github.io/100_days_data_visualization/day_18/index.html)
