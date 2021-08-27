@@ -67,12 +67,10 @@ collections:
       - label: Exploration
         name: exploration
         widget: boolean
-        default: true
         required: false
       - label: Corporate
         name: corporate
         widget: boolean
-        default: false
         required: false
       - label: Featured Image
         name: thumbnail
