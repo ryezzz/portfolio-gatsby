@@ -1,7 +1,9 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import TypeOn from "../components/typeOn"
-export default () => (
+
+
+export default (props) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -21,8 +23,8 @@ export default () => (
         <div className="primary-content"> {TypeOn(data.site.siteMetadata.home.description)}</div>
 
             {/*    <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>*/}
-            <button>Data Experiments </button>
-            <button>Corporate Work</button>
+            <button onClick={()=>props.useFilter("exploration")}>Data Experiments </button>
+            <button onClick={()=>props.useFilter("corporate")}>Corporate Work</button>
             <p></p>
 
       </div>
