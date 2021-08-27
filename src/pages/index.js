@@ -1,4 +1,4 @@
-import React, {useRef, useReducer} from "react"
+import React, {useState, useRef, useReducer} from "react"
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
@@ -46,17 +46,36 @@ const IndexPage = ({
     }
   }
 
+
   const [pager, pagerDispatch] = useReducer(pageReducer, { page: 0 })
   const [imgData, imgDispatch] = useReducer(imgReducer, { images: [], fetching: true, })
+  const [filter, setFilter] = useState('exploration')
+
+
+  const useFilter = (filterType) => {
+    setFilter(filterType)
+    }
+
 
   let bottomBoundaryRef = useRef(null);
   // useFetch(pager, imgDispatch);
   useLazyLoading('.card-img-top', imgData.images)
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch);
 
-  const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+
+
+  const FilteredPosts = edges
+  .filter(edge => edge.node.frontmatter[filter])
+
+  const ReverseFilteredPosts =  edges
+  .filter(edge => !edge.node.frontmatter[filter])
+
+  const SortedPosts = [...FilteredPosts, ...ReverseFilteredPosts]
+
+  const Posts = SortedPosts
+  .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+
+  // .sort((a, b) => (a.node.frontmatter[filter]) ? 1 : -1)
 
 
   console.log("Posts", Posts)
@@ -64,7 +83,7 @@ const IndexPage = ({
     <>
     <Layout>
 
-      <HeroHeader></HeroHeader>
+      <HeroHeader useFilter={useFilter}></HeroHeader>
       <Helmet>
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
@@ -115,6 +134,8 @@ export const pageQuery = graphql`
             path
             title
             thumbnail
+            corporate
+            exploration
           }
         }
       }
