@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Navigation from "../components/navigation"
+import VeroniBackground from "../components/veroniBackground"
 import 'prismjs/themes/prism-okaidia.css';
 
 export default ({ children }) => {
@@ -17,7 +18,8 @@ export default ({ children }) => {
   )
   return (
     <div>
-    <div className="background-div"></div>
+    <div className="background-div"><VeroniBackground/></div>
+    {/* <div><VeroniBackground/></div> */}
 
 <div className="site-content">
       <header className="site-header">
