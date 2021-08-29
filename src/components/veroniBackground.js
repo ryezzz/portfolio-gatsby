@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { Delaunay } from "d3-delaunay";
 
 
-let width = typeof window === undefined? 1000 : window.innerWidth;
+let width = typeof window != "undefined"? window.innerWidth : 1000;
 let height = 1500;
 
 
