@@ -2,7 +2,9 @@ import React from "react";
 import backgroundVeroni from "../components/background_veroni.png";
 import { useEffect, useRef } from "react";
 import { Delaunay } from "d3-delaunay";
-let width = window.innerWidth;
+
+
+let width = typeof window === undefined? 1000 : window.innerWidth;
 let height = 1500;
 
 
