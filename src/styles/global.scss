@@ -11,9 +11,10 @@ body {
   margin-top: 0
 }
 body.light {
-  --primary-color:#a600ff;
-  --primary-color-translucent: rgba(255,255,255, .5);
-
+  --primary-color: rgb(103, 255, 1);
+  --highlight-color-translucent: rgba(4, 5, 5, 0.5);
+  --title-text: #ffff;
+  --primary-color-translucent: rgba(103, 255, 1, .5);
   --primary-text-color: #fff;
   --featured-bg: #a600ff;
   --featured-text: #fff;
@@ -38,6 +39,9 @@ body.dark {
   --card-outline: rgb(4, 255, 154);
   --primary-color:#fff200;
   --primary-color-translucent: rgba(0,0,0, .5);
+  --highlight-color-translucent: rgba(103, 255, 1, 0.5);
+
+  --title-text: #000;
   --primary-text-color: #fff;
   --featured-bg: #00806d;
   --featured-text: #fff;
@@ -57,6 +61,10 @@ body.dark {
   --contact-bg: var(--card-shadow);
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
+}
+
+iframe{
+  overflow:hidden!important;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -80,9 +88,9 @@ a {
   max-width: 1140px;
   margin: 0 auto;
 
-}
+  }
 
-img {
+.preview-img {
   max-width: 500px;
   max-height: 80vh;
   object-fit: cover;
@@ -91,19 +99,37 @@ img {
 
 
 }
+// Embedded svg background
+// .background-div{
+//   width: 100%;
+//   height: 100vh;
+//   position: fixed;
+//   z-index: -100;
+// //  background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
+// background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby/master/src/images/map2.svg');
+
+//   opacity: .5;
+//   background-size: 120%;
+
+// }
+
 
 .background-div{
   width: 100%;
   height: 100vh;
   position: fixed;
-  z-index: -100;
-//  background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
-background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby/master/src/images/map2.svg');
-
+  z-index: -1;
   opacity: .5;
-  background-size: 120%;
-
+  overflow: hidden;
 }
+
+
+.veroni-background{
+  width: 100%;
+  height: auto;
+  background-color: red;
+}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -132,17 +158,19 @@ background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby
   align-items: center;
 }
 
-.post-title-container {
-  // background-color: var(--background);
-  margin: 10px;
 
-}
-.post-title, .post-meta{
-  // padding-top: 10px;
-  // padding-left: 5px;
-  // padding-right: 5px;
 
-}
+
+// .post-title-container :hover{
+//   background-color: var(--highlight-color-translucent);
+
+// }
+
+
+
+// .post-title :hover, .post-meta :hover{
+//   color: var(--secondary-color);
+//   }
 .site-title a {
   color: var(--primary-color);
   text-decoration: none;
@@ -218,7 +246,7 @@ background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby
 .post-thumbnail {
   text-align: center;
   min-height: 380px;
-  background-color: var(--featured-bg);
+  // background-color: var(--featured-bg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -246,8 +274,8 @@ background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby
   }
   .post-meta {
     // color: rgba(255,255,255,0.8);
-    color: black;
-    margin-bottom: 0;
+    // color: black;
+    // margin-bottom: 0;
   }
 }
 .grids {
@@ -257,17 +285,45 @@ background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby
   margin-top: 32px;
 }
 
-.card-container:hover .card{
+// .card-container:hover .card{
 
-  // outline: solid 10px var(--card-outline);
+//   outline: solid 10px var(--card-outline);
 
-  // transition: outline .5s;
+//   transition: outline .5s;
 
+// }
+
+
+
+.post-preview-text-container {
+  background-color: var(--primary-color-translucent);
 }
 
-.card-container{
-  // outline: solid 2px var(--card-outline);
+.post-preview-text-container {
+  padding: 10px;
+}
+.post-title, .post-meta{
+color: var(--secondary-color);
+}
 
+.card-container:hover .post-preview-text-container{
+  background-color: var(--highlight-color-translucent);
+  transition: background-color .5s;
+// color: var(--secondary-color)
+}
+
+
+.card-container:hover .post-meta{
+color: var(--primary-text-color)
+}
+
+.card-container:hover .post-meta{
+color: var(--primary-text-color)
+}
+
+
+.card-container:hover .post-title{
+  color: var(--primary-text-color)
 }
 
 .img-container{
@@ -298,7 +354,7 @@ object-fit: cover;
   // overflow: hidden;
   line-height: 1.5;
   &:hover .post-link {
-    color: var(--primary-color);
+    // color: var(--primary-color);
   }
   > a img {
     display: block;
@@ -323,10 +379,10 @@ object-fit: cover;
     text-decoration: none;
   }
 }
-.post-meta {
-  font-size: 0.8rem;
-  color: var(--text-secondary-color);
-}
+// .post-meta {
+//   font-size: 0.8rem;
+//   color: var(--text-secondary-color);
+// }
 .site-footer {
   text-align: center;
   margin: 90px 0 16px;
