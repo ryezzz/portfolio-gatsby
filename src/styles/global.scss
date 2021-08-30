@@ -46,7 +46,7 @@ body.dark {
   --featured-bg: #00806d;
   --featured-text: #fff;
   --secondary-color: #66578d;
-  --background: rgba(0,0,0,1);
+  --background: rgb(33, 31, 107);
   --text-color: rgba(255,255,255,0.88);
   --text-secondary-color: rgba(255,255,255,0.66);
   --site-header: var(--background);
@@ -323,8 +323,8 @@ color: var(--primary-text-color)
 
 
 .card-container:hover .post-title{
-  color: var(--primary-text-color)
-}
+color: var(--primary-text-color)
+  }
 
 .img-container{
   overflow: hidden;
