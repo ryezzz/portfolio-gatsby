@@ -4,22 +4,28 @@ import { useEffect, useRef } from "react";
 import { Delaunay } from "d3-delaunay";
 
 
+
 let width = typeof window != "undefined"? window.innerWidth : 1000;
 let height = 1500;
+let n = 40;
+let particles = Array.from({ length: n }, () => [
+  Math.random() * width,
+  Math.random()  * height,
+]);
 
 
-const Circle = () => {
+const Circle = (props) => {
+  console.log(props)
+
 
   let ref = useRef();
 
   useEffect(() => {
+
+
     let canvas = ref.current;
     let context = canvas.getContext("2d");
-    let n = 40;
-    let particles = Array.from({ length: n }, () => [
-      Math.random() * width,
-      Math.random() * height,
-    ]);
+
 
     function update() {
       const delaunay = Delaunay.from(particles);
@@ -31,7 +37,7 @@ const Circle = () => {
 
       context.beginPath();
       delaunay.render(context);
-      context.strokeStyle = "#c8ff52";
+      context.strokeStyle = props.rgba;
           context.lineWidth = 5
 
       context.stroke();
@@ -53,12 +59,12 @@ const Circle = () => {
       context.fill();
     }
 
-    // context.canvas.ontouchmove = context.canvas.onmousemove = (event) => {
-    //   event.preventDefault();
-    //   particles[0] = [event.layerX, event.layerY];
-    //   context.lineWidth = 5;
-    //   // update();
-    // };
+    context.canvas.ontouchmove = context.canvas.onmousemove = (event) => {
+      event.preventDefault();
+      particles[0] = [event.layerX, event.layerY];
+      context.lineWidth = 5;
+      update();
+    };
     update();
 
 
@@ -73,9 +79,11 @@ const Circle = () => {
   return <canvas ref={ref} width={width} height={height}/>;
 };
 
-const VeroniBackground = () => (
+const VeroniBackground = (props) => (
   <div>
-    <Circle></Circle>
+     { console.log(props.rgba)}
+
+    <Circle rgba={props.rgba}></Circle>
 
     {/* <iframe
       rel="preload"
