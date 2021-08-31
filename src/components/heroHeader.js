@@ -23,8 +23,9 @@ export default (props) => (
         <div className="primary-content"> {TypeOn(data.site.siteMetadata.home.description)}</div>
 
             {/*    <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>*/}
-            <button onClick={()=>props.useFilter("exploration")}>Data Experiments </button>
-            <button onClick={()=>props.useFilter("corporate")}>Corporate Work</button>
+            <button className="btn" onClick={()=>props.useFilter("corporate")}>All</button>
+            <button className="btn" onClick={()=>props.useFilter("exploration")}>Data Experiments </button>
+            <button className="btn" onClick={()=>props.useFilter("corporate")}>Corporate Work</button>
             <p></p>
 
       </div>

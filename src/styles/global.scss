@@ -63,6 +63,25 @@ body.dark {
   --input-bg: var(--card-bg);
 }
 
+
+.btn {
+  font-family: Arial;
+  color: #848484;
+  font-size: 12px;
+  padding: 0px 0px 5px 0px;
+  margin-right:10px;
+  text-decoration: none;
+  background: rgba(0,0,0,0);
+  cursor: pointer;
+  border: none;
+  border-bottom: rgba(0,0,0,0) solid 1px;
+}
+
+.btn:hover {
+  text-decoration: none;
+  border-bottom:#848484 solid 1px
+}
+
 iframe{
   overflow:hidden!important;
 }
