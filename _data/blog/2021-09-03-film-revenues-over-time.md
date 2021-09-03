@@ -1,0 +1,12 @@
+---
+template: BlogPost
+path: /Film Revenues
+date: 2021-09-03T13:32:12.221Z
+title: Film Revenues Over Time
+exploration: true
+---
+[Here's a bar chart replacement/beeswarm plot concept](https://ryezzz.github.io/temp/) I whipped up using d3's cluster force. I'm still working on restarting the force on transition. It's based on Mike Bostock's [beeswarm](https://bl.ocks.org/mbostock/6526445e2b44303eebf21da3b6627320) plot.
+
+This chart is fun to interact with on hover/touch because of a [Voronoi](https://bl.ocks.org/mbostock/4060366) overlay, which allows the user, both on mobile and desktop, to easily and smoothly select tiny points.
+
+I created it using [this Kaggle dataset](https://www.kaggle.com/PromptCloudHQ/imdb-data)
