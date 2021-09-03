@@ -12,17 +12,17 @@ body {
 }
 body.light {
   --primary-color: rgb(103, 255, 1);
-  --highlight-color-translucent: rgba(4, 5, 5, 0.5);
-  --title-text: #ffff;
-  --primary-color-translucent: rgba(103, 255, 1, .5);
-  --primary-text-color: #fff;
+  --highlight-color-translucent: rgba(103, 255, 1, 0.5);
+  --title-text: #10072b;
+  --primary-color-translucent: rgba(255, 255, 255, 0.5);
+  --primary-text-color: #10072b;;
   --featured-bg: #a600ff;
   --featured-text: #fff;
   --secondary-color: #10072b;
   --background: #fff;
   --site-header: var(--background);
   --card-bg: #fff;
-  --card-outline: rgb(255, 251, 4);
+  --card-outline: rgba(0, 0, 0, .1);
 
   --card-bdr: #eee;
   --card-shadow: #d5d5d5;
@@ -38,9 +38,9 @@ body.light {
 body.dark {
   --card-outline: rgb(4, 255, 154);
   --primary-color:#fff200;
-  --primary-color-translucent: rgba(0,0,0, .5);
+  --primary-color-translucent: rgba(255, 255, 255, .08);
   --highlight-color-translucent: rgba(103, 255, 1, 0.5);
-
+  --card-outline: rgba(255, 255, 255, .2);
   --title-text: #000;
   --primary-text-color: #fff;
   --featured-bg: #00806d;
@@ -316,10 +316,12 @@ a {
 
 .post-preview-text-container {
   background-color: var(--primary-color-translucent);
+
 }
 
 .post-preview-text-container {
   padding: 10px;
+
 }
 .post-title, .post-meta{
 color: var(--secondary-color);
@@ -359,8 +361,9 @@ object-fit: cover;
 .card {
   outline: solid 0px var(--card-outline);
   display: grid;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--card-outline);
 
   // background-color: rgba(0,0,0,.5);
   border-radius: 0px;

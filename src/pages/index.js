@@ -11,8 +11,8 @@ import { useFetch, useInfiniteScroll, useLazyLoading } from '../hooks/customHook
 
 //...
 const breakpointColumnsObj = {
-  default: 5,
-  1800: 5,
+  default: 3,
+  1800: 3,
   1500: 3,
   500: 1
 
