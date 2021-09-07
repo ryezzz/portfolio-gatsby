@@ -1,7 +1,7 @@
 import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -20,15 +20,18 @@ export default function Template({
 
           {!frontmatter.thumbnail && (
             <div className="post-thumbnail">
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
+              {/* <h1 className="post-title">{frontmatter.title}</h1> */}
+              {/* <div className="post-meta">{frontmatter.date}</div> */}
             </div>
           )}
           {!!frontmatter.thumbnail && (
-            <div className="post-thumbnail" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
-              <h1 className="post-title">{frontmatter.title}</h1>
-              <div className="post-meta">{frontmatter.date}</div>
+          <>  <div className="post-thumbnail" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
+
             </div>
+
+   <h1 className="post-title">{frontmatter.title}</h1>
+            <div className="post-meta">{frontmatter.date}</div>
+            </>
           )}
           <div
             className="blog-post-content"
