@@ -1,7 +1,7 @@
 import React, {useState, useRef, useReducer} from "react"
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
 import Masonry from 'react-masonry-css'

@@ -1,7 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from 'gatsby'
-import Layout from "../components/layout"
+import Layout from "../components/layout/layout"
 
 const ContactPage = ({
   data: {
@@ -38,7 +38,7 @@ const ContactPage = ({
               <textarea name="w3lMessage" id="w3lMessage"></textarea>
             </div>
             <div style={{display: "flex", justifyContent: "flex-end"}}>
-              <input type="submit" className="button -primary" style={{marginRight: 0}} />
+              <input type="submit" className="button-primary" style={{marginRight: 0}} />
             </div>
           </form>
         </div>

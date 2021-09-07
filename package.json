@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "d3-delaunay": "^6.0.2",
+    "emotion": "^11.0.0",
     "gatsby": "^2.21.0",
     "gatsby-plugin-dark-mode": "^1.1.1",
     "gatsby-plugin-google-analytics": "^2.1.36",
