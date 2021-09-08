@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import PostLink from "../components/post-link"
 import HeroHeader from "../components/heroHeader"
 import Masonry from 'react-masonry-css'
-import { useFetch, useInfiniteScroll, useLazyLoading } from '../hooks/customHooks'
+import {useInfiniteScroll, useLazyLoading } from '../hooks/customHooks'
 
 
 
@@ -76,7 +76,6 @@ console.log('props from index', props)
 
 
     // .sort((a, b) => (a.node.frontmatter[filter]) ? 1 : -1)
-    const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
     const h = 360 * Math.random();
     const s = "80%";
     const l = "50%";
@@ -110,7 +109,7 @@ console.log('props from index', props)
               const { author, download_url } = post
               return (
                 <div key={index}>
-                  <div className="card-body ">
+                  <div rgba={rgba} className="card-body ">
                     {post}
                   </div>
                 </div>

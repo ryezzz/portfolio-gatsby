@@ -26,6 +26,8 @@ const getParticlesLarge = particles(40, responsiveWidth, 2000);
 // const getParticlesSmall = particles(5, 50, 50)
 
 export default (props) => {
+
+console.log("Finding RGBA", props)
   let children = props.children
 
   const data = useStaticQuery(
@@ -55,8 +57,14 @@ export default (props) => {
 
       <div className="site-content">
         <header className="site-header">
-          <div className="site-title" style={{ color: props.rgba(1) }}>
-            <Link style={{ color: props.rgba(1) }} to="/">
+          <div className="site-title"
+
+          style={{ color: props.rgba(1) }}
+          >
+            <Link
+            to="/"
+            style={{ color: props.rgba(1) }}
+            >
               {data.site.siteMetadata.title}
             </Link>
           </div>
