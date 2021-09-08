@@ -22,10 +22,12 @@ const IndexPage = ({
   data: {
     site,
     allMarkdownRemark: { edges },
-  },
-}) => {
+  }
+}, props) => {
 
 
+
+console.log('props from index', props)
   const imgReducer = (state, action) => {
     switch (action.type) {
       case 'STACK_IMAGES':
@@ -72,16 +74,22 @@ const IndexPage = ({
 
   const SortedPosts = [...FilteredPosts, ...ReverseFilteredPosts]
 
+
+    // .sort((a, b) => (a.node.frontmatter[filter]) ? 1 : -1)
+    const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+    const h = 360 * Math.random();
+    const s = "80%";
+    const l = "50%";
+    const rgba =(opacity)=> `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color string
+
+
   const Posts = SortedPosts
-  .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-
-  // .sort((a, b) => (a.node.frontmatter[filter]) ? 1 : -1)
+  .map(edge => <PostLink rgba={rgba} key={edge.node.id} post={edge.node} />)
 
 
-  console.log("Posts", Posts)
   return (
     <>
-    <Layout>
+    <Layout rgba={rgba}>
 
       <HeroHeader useFilter={useFilter}></HeroHeader>
       <Helmet>
