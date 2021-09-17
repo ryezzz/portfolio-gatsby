@@ -2,10 +2,12 @@ import React from "react"
 import Helmet from 'react-helmet';
 import Layout from "../components/layout/layout"
 import { Link } from "gatsby";
+import { hsla } from "../hooks/customHooks";
+
 
 const notFound = () => {
   return (
-    <Layout>
+    <Layout hsla={hsla}>
       <Helmet>
         <title>Page not found</title>
       </Helmet>
