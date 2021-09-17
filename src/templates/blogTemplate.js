@@ -2,21 +2,26 @@ import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
+// import { hsla } from "../hooks/customHooks";
 
 
-const h = 360 * Math.random();
-const s = "80%";
-const l = "50%";
-const rgba =(opacity)=> `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color string
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data // this prop will be injected by the GraphQL query below.
 }) {
   const { site, markdownRemark } = data // data.markdownRemark holds your post data
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
+
+  // import {  hsla } from "../hooks/customHooks";
+const h = 360 * Math.random();
+const s = "70%";
+const l = "70%";
+const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
+
+let hsla = hslaFun
   return (
-    <Layout rgba={rgba}>
+    <Layout hsla={hsla}>
       <Helmet>
         <title>{frontmatter.title} | {siteMetadata.title}</title>
         <meta name="description" content={frontmatter.metaDescription} />

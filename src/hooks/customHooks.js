@@ -66,3 +66,9 @@ export const useLazyLoading = (imgSelector, items) => {
     }
   }, [imgObserver, imagesRef, imgSelector, items])
 }
+
+
+const h = 360 * Math.random();
+const s = "70%";
+const l = "70%";
+export const hsla = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color

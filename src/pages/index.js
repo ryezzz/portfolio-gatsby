@@ -1,128 +1,109 @@
-import React, {useState, useRef, useReducer} from "react"
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby'
-import Layout from "../components/layout/layout"
-import PostLink from "../components/post-link"
-import HeroHeader from "../components/heroHeader"
-import Masonry from 'react-masonry-css'
-import {useInfiniteScroll, useLazyLoading } from '../hooks/customHooks'
-
-
+import React, { useState, useRef, useReducer } from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/layout";
+import PostLink from "../components/post-link";
+import HeroHeader from "../components/heroHeader";
+import Masonry from "react-masonry-css";
+import { useInfiniteScroll, useLazyLoading, hsla } from "../hooks/customHooks";
 
 //...
 const breakpointColumnsObj = {
   default: 3,
   1800: 3,
   1500: 3,
-  500: 1
-
+  500: 1,
 };
 
-const IndexPage = ({
-  data: {
-    site,
-    allMarkdownRemark: { edges },
-  }
-}, props) => {
-
-
-
-console.log('props from index', props)
+const IndexPage = (
+  {
+    data: {
+      site,
+      allMarkdownRemark: { edges },
+    },
+  },props
+) => {
+  console.log("props from index", props);
   const imgReducer = (state, action) => {
     switch (action.type) {
-      case 'STACK_IMAGES':
-        return { ...state, images: state.images.concat(action.images) }
-      case 'FETCHING_IMAGES':
-        return { ...state, fetching: action.fetching }
+      case "STACK_IMAGES":
+        return { ...state, images: state.images.concat(action.images) };
+      case "FETCHING_IMAGES":
+        return { ...state, fetching: action.fetching };
       default:
         return state;
     }
-  }
+  };
 
   const pageReducer = (state, action) => {
     switch (action.type) {
-      case 'ADVANCE_PAGE':
-        return { ...state, page: state.page + 1 }
+      case "ADVANCE_PAGE":
+        return { ...state, page: state.page + 1 };
       default:
         return state;
     }
-  }
+  };
 
-
-  const [pager, pagerDispatch] = useReducer(pageReducer, { page: 0 })
-  const [imgData, imgDispatch] = useReducer(imgReducer, { images: [], fetching: true, })
-  const [filter, setFilter] = useState('exploration')
-
+  const [pager, pagerDispatch] = useReducer(pageReducer, { page: 0 });
+  const [imgData, imgDispatch] = useReducer(imgReducer, {
+    images: [],
+    fetching: true,
+  });
+  const [filter, setFilter] = useState("exploration");
 
   const useFilter = (filterType) => {
-    setFilter(filterType)
-    }
-
+    setFilter(filterType);
+  };
 
   let bottomBoundaryRef = useRef(null);
   // useFetch(pager, imgDispatch);
-  useLazyLoading('.card-img-top', imgData.images)
+  useLazyLoading(".card-img-top", imgData.images);
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch);
 
+  const FilteredPosts = edges.filter((edge) => edge.node.frontmatter[filter]);
 
+  const ReverseFilteredPosts = edges.filter(
+    (edge) => !edge.node.frontmatter[filter]
+  );
 
-  const FilteredPosts = edges
-  .filter(edge => edge.node.frontmatter[filter])
+  const SortedPosts = [...FilteredPosts, ...ReverseFilteredPosts];
 
-  const ReverseFilteredPosts =  edges
-  .filter(edge => !edge.node.frontmatter[filter])
-
-  const SortedPosts = [...FilteredPosts, ...ReverseFilteredPosts]
-
-
-    // .sort((a, b) => (a.node.frontmatter[filter]) ? 1 : -1)
-    const h = 360 * Math.random();
-    const s = "80%";
-    const l = "50%";
-    const rgba =(opacity)=> `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color string
-
-
-  const Posts = SortedPosts
-  .map(edge => <PostLink rgba={rgba} key={edge.node.id} post={edge.node} />)
-
+  const Posts = SortedPosts.map((edge) => (
+    <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
+  ));
 
   return (
     <>
-    <Layout rgba={rgba}>
+      <Layout hsla={hsla}>
+        <HeroHeader hsla={hsla} useFilter={useFilter}></HeroHeader>
+        <Helmet>
+          <title>{site.siteMetadata.title}</title>
+          <meta name="description" content={site.siteMetadata.description} />
+        </Helmet>
 
-      <HeroHeader useFilter={useFilter}></HeroHeader>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-      </Helmet>
-      {/* <h2>Blog Posts &darr;</h2> */}
-
-
-
-
-    <Masonry
-    breakpointCols={2}
-    breakpointCols={breakpointColumnsObj}
-    className="my-masonry-grid"
-    columnClassName="my-masonry-grid_column">
-       {Posts.map((post, index) => {
-              const { author, download_url } = post
-              return (
-                <div key={index}>
-                  <div rgba={rgba} className="card-body ">
-                    {post}
-                  </div>
+        <Masonry
+          breakpointCols={2}
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {Posts.map((post, index) => {
+            const { author, download_url } = post;
+            return (
+              <div key={index}>
+                <div className="card-body ">
+                  {post}
                 </div>
-              )
-            })}
-  </Masonry>
-  </Layout>
-
+              </div>
+            );
+          })}
+        </Masonry>
+      </Layout>
     </>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 export const pageQuery = graphql`
   query indexPageQuery {
     site {
@@ -148,4 +129,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
