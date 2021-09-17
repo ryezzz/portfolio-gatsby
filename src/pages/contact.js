@@ -2,14 +2,17 @@ import React from "react"
 import Helmet from "react-helmet"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout/layout"
+import { hsla } from "../hooks/customHooks";
+
 
 const ContactPage = ({
   data: {
     site
   },
+  props
 }) => {
   return (
-    <Layout>
+    <Layout hsla={hsla}>
       <Helmet>
         <title>Contact — {site.siteMetadata.title}</title>
         <meta name="description" content={"Contact page of " + site.siteMetadata.description} />

@@ -1,21 +1,35 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
+import { hydrate } from "react-dom";
+
+
 
 const PostLink = (props) => {
-let rgba = props.rgba(.5)
+
+  const h = 360 * Math.random();
+const s = "90%";
+const l = "70%";
+const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
+
+const hsla = hslaFun(.7)
+const hsla2 = hslaFun(.7)
+
+
 // let color = "rgba(63,57,226, 1)"
-let color = "red"
-console.log(rgba)
 let post = props.post
 
 const [hover, setHover] = useState(false);
 
 let onMouseEnter=post
-let onMouseLeave='rgba(255,255,255,.5)'
+let onMouseLeave='0px'
 
   return(
-  <div className = {'card-container'}>
-  <article className="card" style={{backgoundColor:rgba}}>
+  <div  className = {'card-container'}>
+  <article  style={{outline:hover?  `solid ${hsla} 10px`:onMouseLeave, outlineOffset:"0px"}} className="card" onMouseEnter={()=>{setHover(true)}} onMouseLeave={()=>{setHover(false)}}>
+
+
+  {/* <article className="card"> */}
+
     <Link to={post.frontmatter.path}>
       {!!post.frontmatter.thumbnail && (
         <div className="img-container"
@@ -24,7 +38,13 @@ let onMouseLeave='rgba(255,255,255,.5)'
       )}
     </Link>
     <header className="post-title-container">
-    <div onMouseEnter={()=>{setHover(true)}} onMouseLeave={()=>{setHover(false)}} style={{background:hover?rgba:onMouseLeave}} className="post-preview-text-container">
+    {/* <div style={{backgroundColor:hsla2}} className="post-color-bar"/> */}
+    {/* <div style={{background:hover?hsla:onMouseLeave}} className="post-preview-text-container"> */}
+        {/* <div style={{background:hover?hsla:onMouseLeave}} className="post-preview-text-container"> */}
+
+
+        <div style={{backgroundColor:hsla}} className="post-preview-text-container">
+
       <h2 className="post-title">
         <Link to={post.frontmatter.path} className="post-link">
           {post.frontmatter.title}

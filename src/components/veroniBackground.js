@@ -7,9 +7,12 @@ const Veroni = (props) => {
 
   let height = props.height
   let width = props.width
-  let stroke = props.stroke
-  let n=props.n
-  let rgba= props.rgba
+  // let stroke = props.stroke
+  let stroke=5
+
+  let hsla= props.hsla
+  // let hsla="#000000"
+
   let particles = props.particles
 
 
@@ -26,7 +29,7 @@ const Veroni = (props) => {
       context.clearRect(0, 0, width, height);
       context.beginPath();
       delaunay.render(context);
-      context.strokeStyle = rgba;
+      context.strokeStyle = hsla;
       context.lineWidth = stroke;
       context.stroke();
       context.lineWidth = .5;
@@ -34,11 +37,11 @@ const Veroni = (props) => {
       context.beginPath();
       voronoi.render(context);
       voronoi.renderBounds(context);
-      context.strokeStyle = "#00000";
+      context.strokeStyle = hsla;
+
       context.stroke();
       context.beginPath();
       delaunay.renderPoints(context);
-      context.fill();
     }
 
       update();
@@ -53,7 +56,7 @@ const Veroni = (props) => {
 
 const VeroniBackground = (props) => {
   return (<div>
-    <Veroni particles={props.particles} stroke={props.stroke} n={props.n} rgba={props.rgba} width={props.width} height={props.height}/>
+    <Veroni particles={props.particles} stroke={props.stroke} n={props.n} hsla={props.hsla} width={props.width} height={props.height}/>
   </div>)
 };
 
