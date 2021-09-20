@@ -80,7 +80,6 @@ const IndexPage = (
           <title>{site.siteMetadata.title}</title>
           <meta name="description" content={site.siteMetadata.description} />
         </Helmet>
-
         <Masonry
           breakpointCols={2}
           breakpointCols={breakpointColumnsObj}

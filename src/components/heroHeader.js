@@ -23,9 +23,14 @@ export default (props) => (
         <div className="primary-content"> {TypeOn(data.site.siteMetadata.home.description)}</div>
 
             {/*    <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>*/}
-            <button className="btn" onClick={()=>props.useFilter("corporate")}>All</button>
+            {/* <span className="tiny-text">Sort by</span> */}
+<div className="hero-button-group"><button className="btn" onClick={()=>props.useFilter("corporate")}>All Projects </button>
             <button className="btn" onClick={()=>props.useFilter("exploration")}>Data Experiments </button>
             <button className="btn" onClick={()=>props.useFilter("corporate")}>Corporate Work</button>
+            {/* <button className="btn" onClick={()=>props.useFilter("corporate")}>Teaching</button>
+            <button className="btn" onClick={()=>props.useFilter("corporate")}>Art, TV Production & Graphic Design</button> */}
+            </div>
+
             <p></p>
 
       </div>
