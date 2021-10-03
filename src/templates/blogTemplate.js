@@ -1,34 +1,34 @@
-import React from "react"
-import Helmet from 'react-helmet';
-import { graphql } from "gatsby"
-import Layout from "../components/layout/layout"
-// import { hsla } from "../hooks/customHooks";
-
-
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/layout";
+import { hsla } from "../hooks/customHooks";
 
 export default function Template({
-  data // this prop will be injected by the GraphQL query below.
+  data, props, context // this prop will be injected by the GraphQL query below.
 }) {
-  const { site, markdownRemark } = data // data.markdownRemark holds your post data
-  const { siteMetadata } = site
-  const { frontmatter, html } = markdownRemark
+  const { site, markdownRemark } = data; // data.markdownRemark holds your post data
+  const { siteMetadata } = site;
+  const { frontmatter, html } = markdownRemark;
 
+  console.log(props, data, context)
   // import {  hsla } from "../hooks/customHooks";
-const h = 360 * Math.random();
-const s = "70%";
-const l = "70%";
-const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
+  const h = 360 * Math.random();
+  const s = "70%";
+  const l = "70%";
+  const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
 
-let hsla = hslaFun
+  let hsla = hslaFun;
   return (
     <Layout hsla={hsla}>
       <Helmet>
-        <title>{frontmatter.title} | {siteMetadata.title}</title>
+        <title>
+          {frontmatter.title} | {siteMetadata.title}
+        </title>
         <meta name="description" content={frontmatter.metaDescription} />
       </Helmet>
       <div className="blog-post-container">
         <article className="post">
-
           {!frontmatter.thumbnail && (
             <div className="post-thumbnail">
               {/* <h1 className="post-title">{frontmatter.title}</h1> */}
@@ -36,12 +36,21 @@ let hsla = hslaFun
             </div>
           )}
           {!!frontmatter.thumbnail && (
-          <>  <div className="post-thumbnail" style={{backgroundImage: `url(${frontmatter.thumbnail})`}}>
-
-            </div>
-
-   <h1 className="post-title">{frontmatter.title}</h1>
-            <div className="post-meta">{frontmatter.date}</div>
+            <>
+              {" "}
+              <div
+                className="post-thumbnail"
+                style={{ backgroundImage: `url(${frontmatter.thumbnail})` }}
+              ></div>
+              <div
+                className="post-preview-text-container"
+                style={{ backgroundColor: hsla(.7) }}
+              >
+                <h1 className="post-title">{frontmatter.title}</h1>
+                <div className="post-meta">{frontmatter.date}</div>
+              </div>
+             <div> Previous: Xtitle </div>
+             <div> Next: Xtitle </div>
             </>
           )}
           <div
@@ -51,7 +60,7 @@ let hsla = hslaFun
         </article>
       </div>
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -74,4 +83,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

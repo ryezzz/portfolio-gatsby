@@ -11,15 +11,15 @@ body {
   margin-top: 0
 }
 body.light {
-  --primary-color: rgb(103, 255, 1);
+  --primary-color: rgb(0, 107, 183);
   --highlight-color-translucent: rgba(103, 255, 1, 0.5);
   --shadow-color-translucent: rgba(0, 0, 0, 0.3);
   --shadow-color-translucent-dark: rgba(0, 0, 0, 0.7);
 
-
+  --background-opacity:1 ;
   --title-text: #10072b;
   --primary-color-translucent: rgba(255, 255, 255, 0.5);
-  --primary-text-color: #10072b;;
+  --primary-text-color: #18122b;;
   --featured-bg: #a600ff;
   --featured-text: #fff;
   --secondary-color: #10072b;
@@ -40,15 +40,17 @@ body.light {
   --input-bg: var(--background);
 }
 body.dark {
-  --card-outline: rgb(4, 255, 154);
-  --primary-color:#fff200;
+  --background-opacity:.4 ;
+
+  --card-outline: rgb(4, 130, 255);
+  --primary-color: rgb(148, 202, 255);
   --shadow-color-translucent: rgba(0, 0, 0, 0.9);
   --primary-color-translucent: rgba(217, 214, 255, 0.2);
-  --highlight-color-translucent: rgba(103, 255, 1, 0.5);
+  --highlight-color-translucent:  rgb(4, 130, 255);
   --card-outline: rgba(255, 255, 255, .2);
   --title-text: #000;
   --primary-text-color: #fff;
-  --featured-bg: #00806d;
+  --featured-bg:  rgb(4, 130, 255);
   --featured-text: #fff;
   --secondary-color: #66578d;
   --background: rgb(19, 17, 34);
@@ -127,7 +129,7 @@ a {
   padding: 5% 5% 5% 5%;
 }
 .site-wrapper {
-  padding: 32px;
+  // padding: 32px;
   max-width: 1140px;
   margin: 0 auto;
 
@@ -154,18 +156,9 @@ a {
 
 }
 // Embedded svg background
-// .background-div{
-//   width: 100%;
-//   height: 100vh;
-//   position: fixed;
-//   z-index: -100;
-// //  background-image: url('https://ryezzz.github.io/information-aesthetics/nycmapdensity/map2.svg');
-// background-image: url('https://raw.githubusercontent.com/ryezzz/portfolio-gatsby/master/src/images/map2.svg');
-
-//   opacity: .5;
-//   background-size: 120%;
-
-// }
+.background-div{
+  opacity: var(--background-opacity)
+}
 
 
 .background-div{
@@ -207,12 +200,14 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 0px 0;
-  margin-bottom: 32px;
+  // margin-bottom: 32px;
   align-items: center;
 }
 
 .blog-post-content{
-  padding: 10px
+  padding: 10px;
+  font-size: 18px;
+  color:var(--primary-text-color);
 }
 
 
@@ -303,7 +298,7 @@ a {
     font-size: 2rem;
   }
   .post-meta {
-    margin-bottom: 32px;
+    // margin-bottom: 32px;
     text-align: center;
   }
 
@@ -377,7 +372,7 @@ a {
 
 }
 .post-title, .post-meta{
-color: var(--secondary-color);
+color: var(--primary-text-color);
 }
 
 .card-container:hover .post-preview-text-container{
@@ -450,11 +445,11 @@ color: var(--primary-text-color)
   }
 
 .img-container{
-  overflow: hidden;
+  // overflow: h idden;
 }
 
 .card-container:hover img{
-transform: scale(1.05);
+transform: scale(1.5);
 transition: transform .5s;
 object-fit: cover;
 }
