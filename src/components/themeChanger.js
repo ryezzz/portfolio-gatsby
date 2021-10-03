@@ -9,7 +9,7 @@ export default () => (
           type="checkbox"
           className="theme-changer"
           onChange={e => toggleTheme(e.target.checked ? 'light' : 'dark')}
-          checked={theme === 'light'}
+          checked={theme == 'light'}
         />{' '}
         <div className="mode-container">
           <i className="gg-sun"></i>
