@@ -116,6 +116,18 @@ export const pageQuery = graphql`
             exploration
           }
         }
+    next {
+      frontmatter {
+        path
+        title
+      }
+    }
+    previous {
+      frontmatter {
+        path
+        title
+      }
+    }
       }
     }
   }
