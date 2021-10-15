@@ -14,8 +14,9 @@ const ResumePage = ({
   return (
     <Layout hsla={hsla}>
 
-<div className="page">
-
+<div className="post">
+<div className= "blog-post-content">
+<p>Section</p>
 <div>Section</div>
 <div>Section</div>
 <div>Section</div>
@@ -29,7 +30,7 @@ const ResumePage = ({
 <div>Section</div>
 <div>Section</div>
 <div>Section</div>
-<div>Section</div>
+</div>
 
       </div>
     </Layout>

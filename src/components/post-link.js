@@ -19,8 +19,6 @@ const PostLink = (props) => {
 
   return (
     <div className={"card-container"}>
-      {/* <article  style={{outline:hover?  `solid ${hsla} 10px`:onMouseLeave, outlineOffset:"0px"}} className="card" onMouseEnter={()=>{setHover(true)}} onMouseLeave={()=>{setHover(false)}}> */}
-
       {props.type === "widePortfolio" ? (
         <>
           <article className="card">
