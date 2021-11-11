@@ -27,12 +27,7 @@ export default (props) => (
 <div className="hero-button-group"><button className="btn" onClick={()=>props.useFilter("corporate")}>All Projects </button>
             <button className="btn" onClick={()=>props.useFilter("exploration")}>Data Experiments </button>
             <button className="btn" onClick={()=>props.useFilter("corporate")}>Corporate Work</button>
-            {/* <button className="btn" onClick={()=>props.useFilter("corporate")}>Teaching</button>
-            <button className="btn" onClick={()=>props.useFilter("corporate")}>Art, TV Production & Graphic Design</button> */}
             </div>
-
-            <p></p>
-
       </div>
     )}
   />
