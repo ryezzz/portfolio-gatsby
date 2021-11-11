@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 // make API calls and pass the returned data via dispatch
 // export const useFetch = (data, dispatch) => {
 //   useEffect(() => {
@@ -72,3 +72,34 @@ const h = 360 * Math.random();
 const s = "70%";
 const l = "70%";
 export const hsla = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
+
+
+
+
+
+
+const isWindowAvailable = typeof window !== "undefined"
+
+const getPosition = () => isWindowAvailable ? window.pageYOffset : undefined
+
+export const useWindowScrollPosition = () => {
+
+  const [scrollPosition, setScrollPosition] = useState(getPosition())
+
+  useEffect(() => {
+    if (!isWindowAvailable) {
+      return false
+    }
+
+    const handleScroll = () => {
+      setScrollPosition(getPosition())
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  return scrollPosition
+}
+

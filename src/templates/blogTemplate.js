@@ -20,14 +20,14 @@ export default function Template({
   let hsla = hslaFun;
 
   const nextPost = next && (
-    <Link to={next.frontmatter.path} style={{ maxWidth: "25%" }}>
-      <div className = "link-no-background right-float">Next ❯ </div>
+    <Link to={next.frontmatter.path} style={{ }}>
+      <div className = "right-float"> ❯ </div>
     </Link>
   );
 
   const previousPost = previous && (
-    <Link to={previous.frontmatter.path} style={{ maxWidth: "25%" }}>
-      <div className = "link-no-background left-float"> ❮ Previous</div>
+    <Link to={previous.frontmatter.path} style={{}}>
+      <div className = "left-float"> ❮ </div>
     </Link>
   );
 
@@ -45,6 +45,7 @@ export default function Template({
           {!!frontmatter.thumbnail && (
             <>
               {" "}
+
               <div
                 className="post-thumbnail"
                 style={{ backgroundImage: `url(${frontmatter.thumbnail})` }}
@@ -53,11 +54,15 @@ export default function Template({
                 className="post-preview-text-container"
                 style={{ backgroundColor: hsla(0.7) }}
               >
-                <h1 className="post-title">{frontmatter.title}</h1>
+              <div className="next-previous-container"> {previousPost}  {nextPost}</div>
+
+              <h1 className="post-title">{frontmatter.title}</h1>
+
                 <div className="post-meta">{frontmatter.date}</div>
+
+
               </div>
               <div>
-              <div className="next-previous-container"> {previousPost}  {nextPost}</div>
 
               </div>
             </>

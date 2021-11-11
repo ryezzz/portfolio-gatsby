@@ -11,14 +11,14 @@ body {
   margin-top: 0
 }
 body.light {
-  --primary-color: rgb(0, 107, 183);
+  --primary-color: #000000;
   --highlight-color-translucent: rgba(103, 255, 1, 0.5);
   --shadow-color-translucent: rgba(0, 0, 0, 0.3);
   --shadow-color-translucent-dark: rgba(0, 0, 0, 0.7);
 
   --background-opacity:1 ;
   --title-text: #10072b;
-  --primary-color-translucent: rgba(255, 255, 255, 0.5);
+  --primary-color-translucent: rgba(255, 255, 255, 0);
   --primary-text-color: #18122b;;
   --featured-bg: #a600ff;
   --featured-text: #fff;
@@ -43,9 +43,9 @@ body.dark {
   --background-opacity:.4 ;
 
   --card-outline: rgb(4, 130, 255);
-  --primary-color: rgb(148, 202, 255);
+  --primary-color: rgba(250,250,250, 0);
   --shadow-color-translucent: rgba(0, 0, 0, 0.9);
-  --primary-color-translucent: rgba(217, 214, 255, 0.2);
+  --primary-color-translucent: rgba(217, 214, 255, 0);
   --highlight-color-translucent:  rgb(4, 130, 255);
   --card-outline: rgba(255, 255, 255, .2);
   --title-text: #000;
@@ -70,25 +70,31 @@ body.dark {
   --input-bg: var(--card-bg);
 }
 
+.site-logo {
+  font-weight: 900;
+  font-size: 20px;
 
+}
 
 .btn {
   font-family: Arial;
   color: var(--primary-text-color);
   font-size: 1em;
-  padding: 10px;
+  padding: 7px;
   margin: 10px;
-  margin-right:20px;
+  margin-right:10px;
   margin-left:0px;
   text-decoration: none;
-  background-color:var(--primary-color-translucent);
+  background-color: rgba(0,0,0,.0);
   cursor: pointer;
   border: none;
-  border-bottom: rgba(0,0,0,0) solid 1px;
   box-shadow: 3px 3px 12px rgba(0,0,0,.3);
 
 }
 
+.btn-selected{
+border-bottom: 2px solid var(--primary-color);
+}
 
 
 
@@ -200,47 +206,41 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 0px 0;
-  // margin-bottom: 32px;
   align-items: center;
 }
 
 .blog-post-content{
   padding: 10px;
   font-size: 18px;
-  color:var(--primary-text-color);
 }
 
 .next-previous-container{
-  height: 40px;
-  width: 100%;
-  font-size: 15px;
-  background-color: var(--background);
-
+  position: absolute ;
+  margin: -20px;
+  height: 100px;
+  z-index: 3000;
+  width: 90%;
+  font-size: 50px;
+  color: var(--featured-text);
 }
 
 
-.link-no-background {
-padding: 10px;
-padding-top:  10px;
-}
 
 .right-float{
-  float: right
+  float: right;
 }
 
 .left-float{
   float: left;
+  margin-left: 20px;
+
 }
 .right-float
 
 // .post-title :hover, .post-meta :hover{
 //   color: var(--secondary-color);
 //   }
-.site-title a {
-  text-decoration: none;
-  font-weight: 900;
-  text-transform: uppercase;
-}
+
 .hero-header {
   // padding: 0 0 64px;
   max-width: 980px;
@@ -320,6 +320,10 @@ padding-top:  10px;
     margin: 0 0 0.5rem;
     line-height: 1.3;
     font-size: 2rem;
+    max-width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+
   }
   .post-meta {
     // margin-bottom: 32px;
@@ -376,13 +380,13 @@ padding-top:  10px;
   margin-top: 32px;
 }
 
-// .card-container:hover .card{
+.card-container .card{
 
-//   outline: solid 10px var(--card-outline);
+  // outline: solid 1px var(--primary-color);
 
-//   transition: outline .5s;
+  transition: outline .5s;
 
-// }
+}
 
 
 
@@ -431,10 +435,7 @@ text-decoration: none;
     text-decoration: none;
 
     // outline: solid 1px var(--primary-text-color);
-    box-shadow: 6px 6px 20px  rgba(0,0,0,.4);
-    // zoom: 1.01;
-    // transition: zoom .5s;
-    background-color: white;
+    box-shadow: 6px 6px 20px  rgba(0,0,0,.8);
     transition: box-shadow .5s;
     transition: background-color .4s;
 
@@ -456,11 +457,19 @@ text-decoration: none;
 
   }
 
+  .post img{
+    width: 100%;
+  }
 
+  .post iframe{
+    width: 100%;
+  }
 
 
 .card-container:hover .post-meta{
-color: var(--primary-text-color)
+color: var(--primary-text-color);
+color: black
+
 }
 
 
@@ -468,12 +477,18 @@ color: var(--primary-text-color)
 color: var(--primary-text-color)
   }
 
+  .card-container:hover .post-link {
+    color: black
+      }
+
 .img-container{
   // overflow: h idden;
 }
 
 .card-container:hover img{
-transform: scale(1.5);
+  filter: contrast(120%);
+  transform: scale(1.2);
+opacity: 100%;
 transition: transform .5s;
 object-fit: cover;
 }

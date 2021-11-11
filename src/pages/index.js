@@ -72,6 +72,16 @@ const IndexPage = (
     <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
   ));
 
+
+  const filters =(func)=> (
+    <div className="hero-button-group">
+    <button className="btn" onClick={() => func("corporate")}>
+    All Projects{" "}
+  </button>
+  </div>
+  );
+
+
   return (
     <>
       <Layout hsla={hsla}>

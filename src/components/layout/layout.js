@@ -51,8 +51,8 @@ const hsla=props.hsla
 
       <div className="site-content">
         <header className="site-header">
-          <div className="site-title" style={{ color: hsla(1) }}>
-            <Link to="/" style={{ color: hsla(1) }}>
+          <div className="site-logo" >
+            <Link to="/" style={{ color: hsla(1)}}>
               {data.site.siteMetadata.title}
             </Link>
           </div>
