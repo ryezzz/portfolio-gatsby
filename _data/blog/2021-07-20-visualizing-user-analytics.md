@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /user-analytics
-date: 2021-07-20T17:55:53.321Z
+date: 2021-11-11T20:34:22.195Z
 title: Visualizing User Analytics
 metaDescription: Visualizing User Analytics
 corporate: true
