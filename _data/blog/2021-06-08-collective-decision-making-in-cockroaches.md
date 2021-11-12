@@ -9,9 +9,7 @@ thumbnail: /assets/roachesteaser.jpg
 ---
 [Play with the visualization](https://ryezzz.github.io/100_days_data_visualization/day_18/index.html)
 
-I created this design using the d3.js cluster force layout. My sorting algorithm isn't completely finalized in this prototype. It is based on a 2006 study of cockroach clustering behavior, ["Collegial decision making based on social amplification leads to optimal group formation"](https://www.ncbi.nlm.nih.gov/pubmed/16581903) and allows the user to see how the insects sort depending on different conditions.
-
-
+This interactive tool is a visual representation of a 2006 study of cockroach clustering behavior[: "Collegial decision making based on social amplification leads to optimal group formation"](https://www.ncbi.nlm.nih.gov/pubmed/16581903) it allows the user to see how the insects behave depending on different number of shelters and insects. Essentially, roaches will always want to be clustered as densely as possible, but oddly, will never leave a single insect out - They'll cluster less densely to make sure everyone's included.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sQH12Ynopvo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
