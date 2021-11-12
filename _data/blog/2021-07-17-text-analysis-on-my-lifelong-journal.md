@@ -6,7 +6,9 @@ title: Childhood Diary Analysis
 exploration: true
 thumbnail: /assets/screen-shot-2021-07-17-at-9.41.06-am.png
 ---
-I've kept a personal journal since middle school and the text in it is very much "stream of consciousness" really, really tough to parse through reading. I recently realized, "Hey! I know how to do some basic NLP and I can shrink this down to something digestible!"
+I've kept a personal journal since middle school and the text in it is very much "stream of consciousness" and really, really tough to read. For instance:\
+\
+I recently realized, "Hey! I know how to do some basic NLP and I can shrink this down to something digestible!"
 
 There's a few challenges I ran into here. First, I had to take a massive text document (like 300,000 words) with various date/entry formats and turn it into data I could analyze.
 
