@@ -1,8 +1,12 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import Layout from "../components/layout/layout";
 import { Link } from "gatsby";
+import {useKeypress } from "../hooks/customHooks";
+
+
+
 
 export default function Template({
   data,
@@ -16,6 +20,7 @@ export default function Template({
   const s = "70%";
   const l = "70%";
   const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
+
 
   let hsla = hslaFun;
 
@@ -31,6 +36,15 @@ export default function Template({
     </Link>
   );
 
+
+  useKeypress(39, () => {
+    navigate(next && next.frontmatter.path )
+  });
+
+  useKeypress(37, () => {
+    navigate(previous && previous.frontmatter.path )
+  });
+
   return (
     <Layout hsla={hsla}>
       <Helmet>
@@ -45,7 +59,7 @@ export default function Template({
           {!!frontmatter.thumbnail && (
             <>
               {" "}
-
+              <div className="next-previous-container"> {previousPost}  {nextPost}</div>
               <div
                 className="post-thumbnail"
                 style={{ backgroundImage: `url(${frontmatter.thumbnail})` }}
@@ -54,11 +68,11 @@ export default function Template({
                 className="post-preview-text-container"
                 style={{ backgroundColor: hsla(0.7) }}
               >
-              <div className="next-previous-container"> {previousPost}  {nextPost}</div>
+
 
               <h1 className="post-title">{frontmatter.title}</h1>
 
-                <div className="post-meta">{frontmatter.date}</div>
+                <div className="post-meta">{frontmatter.metaDescription}</div>
 
 
               </div>

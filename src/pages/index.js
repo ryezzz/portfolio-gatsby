@@ -15,6 +15,9 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
+
+
+
 const IndexPage = (
   {
     data: {
@@ -44,8 +47,8 @@ const IndexPage = (
     }
   };
 
-  const [pager, pagerDispatch] = useReducer(pageReducer, { page: 0 });
-  const [imgData, imgDispatch] = useReducer(imgReducer, {
+  const [pagerDispatch] = useReducer(pageReducer, { page: 0 });
+  const [imgData] = useReducer(imgReducer, {
     images: [],
     fetching: true,
   });
@@ -73,13 +76,6 @@ const IndexPage = (
   ));
 
 
-  const filters =(func)=> (
-    <div className="hero-button-group">
-    <button className="btn" onClick={() => func("corporate")}>
-    All Projects{" "}
-  </button>
-  </div>
-  );
 
 
   return (
@@ -133,6 +129,8 @@ export const pageQuery = graphql`
             thumbnail
             corporate
             exploration
+            metaDescription
+
           }
         }
       }

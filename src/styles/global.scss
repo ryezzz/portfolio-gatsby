@@ -15,10 +15,10 @@ body.light {
   --highlight-color-translucent: rgba(103, 255, 1, 0.5);
   --shadow-color-translucent: rgba(0, 0, 0, 0.3);
   --shadow-color-translucent-dark: rgba(0, 0, 0, 0.7);
-
+--link-color:rgb(0, 127, 212);
   --background-opacity:1 ;
   --title-text: #10072b;
-  --primary-color-translucent: rgba(255, 255, 255, 0);
+  --primary-color-translucent: rgba(255, 255, 255, .6);
   --primary-text-color: #18122b;;
   --featured-bg: #a600ff;
   --featured-text: #fff;
@@ -41,11 +41,12 @@ body.light {
 }
 body.dark {
   --background-opacity:.4 ;
+  --link-color: rgb(255, 208, 0);
 
   --card-outline: rgb(4, 130, 255);
   --primary-color: rgba(250,250,250, 0);
   --shadow-color-translucent: rgba(0, 0, 0, 0.9);
-  --primary-color-translucent: rgba(217, 214, 255, 0);
+  --primary-color-translucent: rgba(217, 214, 255, .2);
   --highlight-color-translucent:  rgb(4, 130, 255);
   --card-outline: rgba(255, 255, 255, .2);
   --title-text: #000;
@@ -124,7 +125,7 @@ body {
   color: var(--text-color);
 }
 a {
-  color: var(--primary-color);
+  color: var(--link-color);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -215,25 +216,26 @@ a {
 }
 
 .next-previous-container{
-  position: absolute ;
-  margin: -20px;
+  position: fixed ;
   height: 100px;
   z-index: 3000;
-  width: 90%;
-  font-size: 50px;
+  // width: 95%;
+  font-size: 30px;
   color: var(--featured-text);
 }
 
 
 
 .right-float{
-  float: right;
+  position: fixed ;
+  color: black;
+  right: 2%;
 }
 
 .left-float{
-  float: left;
-  margin-left: 20px;
-
+  position: fixed ;
+  color: black;
+  left: 2%;
 }
 .right-float
 
@@ -325,8 +327,14 @@ a {
     padding-right: 8%;
 
   }
+
+  .post-title-container{
+    height: 50px;
+  }
+
   .post-meta {
     // margin-bottom: 32px;
+    // height: 50px;
     text-align: center;
   }
 
@@ -340,7 +348,7 @@ a {
 }
 .post-thumbnail {
   text-align: center;
-  min-height: 180px;
+  min-height: 300px;
   // background-color: var(--featured-bg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -517,6 +525,7 @@ object-fit: cover;
   > a img {
     display: block;
     width:100%;
+    // height: 35vh
   }
 
   > header {
@@ -557,7 +566,7 @@ object-fit: cover;
 //typeon
 .sub-title{
 font-size: 30px;
-min-height: 90px;
+min-height: 30px;
 
 }
 
@@ -739,8 +748,11 @@ body.light {
   width: auto;
 }
 .my-masonry-grid_column {
-  // padding-right: 5px; /* gutter size */
+  padding-right: 0px; /* gutter size */
   background-clip: padding-box;
+}
+.card-container{
+  padding-bottom: 0px;
 }
 
 /* Style your items */
