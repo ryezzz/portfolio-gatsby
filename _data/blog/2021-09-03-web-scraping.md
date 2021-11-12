@@ -3,7 +3,7 @@ template: BlogPost
 path: /web-scraping-aa
 date: 2021-09-03T13:35:43.551Z
 title: Web Scraping
-metaDescription: Web Scraping
+metaDescription: My first attempt at web scraping
 exploration: true
 thumbnail: /assets/aaheader.jpg
 ---
