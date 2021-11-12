@@ -17,7 +17,23 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 // }
 
 
+export function useKeypress(key, action) {
+  useEffect(() => {
+    function onKeyup(e) {
+      if (e.keyCode === key) action()
+    }
+    window.addEventListener('keyup', onKeyup);
+    return () => window.removeEventListener('keyup', onKeyup);
+  }, []);
+}
+
+
+
+
 // infinite scrolling with intersection observer
+
+
+
 export const useInfiniteScroll = (scrollRef, dispatch) => {
   const scrollObserver = useCallback(
     node => {

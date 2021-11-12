@@ -6,16 +6,9 @@ const PostLink = (props) => {
   const s = "90%";
   const l = "70%";
   const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
-
   const hsla = hslaFun(0.7);
 
-  // let color = "rgba(63,57,226, 1)"
   let post = props.post;
-
-  const [hover, setHover] = useState(false);
-
-  let onMouseEnter = post;
-  let onMouseLeave = "0px";
 
   return (
     <div className={"card-container"}>
@@ -43,7 +36,7 @@ const PostLink = (props) => {
                       {post.frontmatter.title}
                     </Link>
                   </h2>
-                  <div className="post-meta">{post.frontmatter.date}</div>
+                  <div className="post-meta">{post.frontmatter.meta}</div>
                 </div>
               </header>
             </Link>
@@ -71,7 +64,7 @@ const PostLink = (props) => {
                     {post.frontmatter.title}
                   </Link>
                 </h2>
-                <div className="post-meta">{post.frontmatter.date}</div>
+                <div className="post-meta">{post.frontmatter.metaDescription}</div>
               </div>
             </header>
           </Link>
