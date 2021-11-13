@@ -3,6 +3,7 @@ template: BlogPost
 path: /undp
 date: 2021-05-16T19:26:52.145Z
 title: Inequality Analysis for UNDP
+metaDescription: Understanding shifts in income quintiles over time - Javascript, D3
 exploration: false
 corporate: true
 thumbnail: /assets/screen-shot-2021-07-20-at-2.03.09-pm.png
