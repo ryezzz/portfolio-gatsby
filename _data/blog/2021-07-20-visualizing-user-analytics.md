@@ -3,7 +3,7 @@ template: BlogPost
 path: /user-analytics
 date: 2021-11-11T20:34:22.195Z
 title: Visualizing User Analytics
-metaDescription: The project that takes most of my time in 2021
+metaDescription: The project that ocupies most of my time in 2021
 corporate: true
 thumbnail: /assets/screen-shot-2021-11-11-at-3.06.52-pm.png
 ---
