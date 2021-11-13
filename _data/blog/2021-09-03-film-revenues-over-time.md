@@ -3,6 +3,7 @@ template: BlogPost
 path: /Film Revenues
 date: 2021-09-03T13:32:12.221Z
 title: Film Revenues Over Time
+metaDescription: A flexible design that I often use instead of a stacked bar chart made with d3
 exploration: true
 thumbnail: /assets/screen-shot-2018-05-08-at-10.18.50-am.png
 ---
