@@ -81,9 +81,10 @@ collections:
           config:
             multiple: false
       - { name: body, label: Body, widget: markdown }
- - name: page
-    label: page
-    folder: _data/page
+        - name: blog
+  - name: pages
+    label: Pages
+    folder: _data/pages
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
     fields:
@@ -104,6 +105,14 @@ collections:
         name: metaDescription
         widget: text
         required: false
+      - label: Exploration
+        name: exploration
+        widget: boolean
+        required: false
+      - label: Corporate
+        name: corporate
+        widget: boolean
+        required: false
       - label: Featured Image
         name: thumbnail
         widget: image
@@ -113,3 +122,4 @@ collections:
           config:
             multiple: false
       - { name: body, label: Body, widget: markdown }
+
