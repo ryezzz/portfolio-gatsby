@@ -81,9 +81,8 @@ collections:
           config:
             multiple: false
       - { name: body, label: Body, widget: markdown }
-        - name: blog
   - name: pages
-    label: Pages
+    label: pages
     folder: _data/pages
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     create: true
@@ -94,32 +93,3 @@ collections:
           widget: hidden,
           default: BlogPost,
         }
-      - name: path
-        label: Path
-        widget: string
-        pattern: [/,/]
-        hint: "Path must start with /"
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - label: Meta Description
-        name: metaDescription
-        widget: text
-        required: false
-      - label: Exploration
-        name: exploration
-        widget: boolean
-        required: false
-      - label: Corporate
-        name: corporate
-        widget: boolean
-        required: false
-      - label: Featured Image
-        name: thumbnail
-        widget: image
-        hint: "Image size 1280x800 works best :)"
-        required: false
-        media_library:
-          config:
-            multiple: false
-      - { name: body, label: Body, widget: markdown }
-
