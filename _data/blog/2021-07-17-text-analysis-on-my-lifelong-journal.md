@@ -1,7 +1,7 @@
 ---
 template: BlogPost
-path: /journal
-date: 2021-07-17T15:46:18.635Z
+path: /portfolio/journal
+date: 2021-11-15T20:59:01.777Z
 title: Childhood Diary Analysis
 metaDescription: An ongoing text analysis of my journal - Python & Tableau
 exploration: true
