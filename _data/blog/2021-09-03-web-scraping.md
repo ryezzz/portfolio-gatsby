@@ -1,7 +1,7 @@
 ---
 template: BlogPost
-path: /web-scraping-aa
-date: 2021-09-03T13:35:43.551Z
+path: /portfolio/web-scraping-aa
+date: 2021-11-15T20:56:26.448Z
 title: Web Scraping
 metaDescription: My first attempt at web scraping
 exploration: true
