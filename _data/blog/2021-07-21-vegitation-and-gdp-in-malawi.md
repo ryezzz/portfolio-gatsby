@@ -1,7 +1,7 @@
 ---
 template: BlogPost
-path: /vegitation
-date: 2021-07-21T00:59:32.059Z
+path: /portfolio/vegetation
+date: 2021-11-15T21:01:49.865Z
 title: "Vegitation and GDP in Malawi "
 metaDescription: Master's thesis spatial analysis - javascript, d3, python
 exploration: false
