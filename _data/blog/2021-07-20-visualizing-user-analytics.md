@@ -1,7 +1,7 @@
 ---
 template: BlogPost
-path: /user-analytics
-date: 2021-11-11T20:34:22.195Z
+path: /portfolio/user-analytics
+date: 2021-11-15T21:05:00.000Z
 title: Visualizing User Analytics
 metaDescription: The project that occupies most of my time in 2021
 corporate: true
