@@ -5,11 +5,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
-  const result = await graphql(`
+  const pageTemplate = path.resolve(`src/templates/pageTemplate.js`);
+
+  const resultPage = await graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
+        sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {path: {regex: "\\/pages/"}, title: {}}, children: {}}
       ) {
         edges {
           node {
@@ -35,21 +36,42 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
-  // Handle errors
-  if (result.errors) {
+  const resultPortfolio = await graphql(`
+  {
+    allMarkdownRemark(
+      sort: {order: DESC,fields: frontmatter___date}, filter: {frontmatter: {path: {regex: "\\/portfolio/"}, title: {}}, children: {}}
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+          }
+        }
+        next {
+          frontmatter {
+            path
+            title
+          }
+        }
+        previous {
+          frontmatter {
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`);
+
+  if (resultPortfolio.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
     return;
   }
 
 
-  // res.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
-  //   createPage({
-  //     path: node.frontmatter.path,
-  //     component: postTemplate,
-  //   })
-  // })
-
-  result.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
+resultPortfolio.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
@@ -59,4 +81,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     });
   });
+
+
+resultPage.data.allMarkdownRemark.edges.forEach(({ node, next, previous }) => {
+  createPage({
+    path: node.frontmatter.path,
+    component: pageTemplate,
+    context: {
+      next,
+      previous,
+    },
+  });
+});
+
 };
+
+
+

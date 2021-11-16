@@ -75,7 +75,6 @@ const PortfolioPage = (
 
 
           {Posts.map((post, index) => {
-            const { author, download_url } = post;
             return (
               <div key={index}>
                 <div className="card-body">
