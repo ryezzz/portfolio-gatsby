@@ -11,4 +11,4 @@ This was my major "full stack" application while working in corporate finance. I
 
 It's a tool that allowed professional investors to search for non-financial and web-scraped data, and relied heavily on Google Data Catalog, Flask, React and D3.
 
-See my former manager presenting an early version of it [here](https://www.youtube.com/watch?v=eUKqXZDXj78) at Google Next.
+See my former manager presenting an early version of it [here](https://youtu.be/eUKqXZDXj78?t=1161) at Google Next.
