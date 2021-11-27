@@ -56,8 +56,8 @@ collections:
       - name: path
         label: Path
         widget: string
-        pattern: [/,/]
-        hint: "Path must start with /"
+        pattern: [/portfolio/,/]
+        hint: "Path must start with /portfolio/"
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - label: Meta Description
@@ -91,7 +91,7 @@ collections:
           label: Template,
           name: template,
           widget: hidden,
-          default: BlogPost,
+          default: Page,
         }
       - name: path
         label: Path

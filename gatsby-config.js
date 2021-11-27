@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Delog GatbsyJS Starter`,
-        short_name: `Delog`,
+        name: `Randomly Colorful Portfolio`,
+        short_name: `Randomly Colorful Portfolio`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#381696`,
@@ -59,6 +59,5 @@ module.exports = {
     'gatsby-plugin-dark-mode',
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
   ],
 }

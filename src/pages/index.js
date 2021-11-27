@@ -24,9 +24,10 @@ const IndexPage = (
       site,
       allMarkdownRemark: { edges },
     },
-  },props
+  }
 ) => {
-  console.log("props from index", props);
+
+
   const imgReducer = (state, action) => {
     switch (action.type) {
       case "STACK_IMAGES":
@@ -52,7 +53,7 @@ const IndexPage = (
     images: [],
     fetching: true,
   });
-  const [filter, setFilter] = useState("exploration");
+  const [filter, setFilter] = useState("all");
 
   const useFilter = (filterType) => {
     setFilter(filterType);
@@ -63,18 +64,16 @@ const IndexPage = (
   useLazyLoading(".card-img-top", imgData.images);
   useInfiniteScroll(bottomBoundaryRef, pagerDispatch);
 
-  const FilteredPosts = edges.filter((edge) => edge.node.frontmatter[filter]);
+  const UnfilteredPosts = edges
 
-  const ReverseFilteredPosts = edges.filter(
-    (edge) => !edge.node.frontmatter[filter]
-  );
+  const FilteredPosts = UnfilteredPosts.filter((edge) => edge.node.frontmatter[filter]) ;
 
-  const SortedPosts = [...FilteredPosts, ...ReverseFilteredPosts];
+  const ExsitingPosts = FilteredPosts.length ? FilteredPosts: UnfilteredPosts;
 
-  const Posts = SortedPosts.map((edge) => (
+
+  const Posts = ExsitingPosts.map((edge) => (
     <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
   ));
-
 
 
 
@@ -93,7 +92,6 @@ const IndexPage = (
           columnClassName="my-masonry-grid_column"
         >
           {Posts.map((post, index) => {
-            const { author, download_url } = post;
             return (
               <div key={index}>
                 <div className="card-body ">
@@ -117,7 +115,8 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {path: {regex: "\\/portfolio/"}, title: {}}, children: {}}) {
+
       edges {
         node {
           id

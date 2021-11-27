@@ -3,46 +3,40 @@ import Helmet from "react-helmet";
 import { graphql, navigate } from "gatsby";
 import Layout from "../components/layout/layout";
 import { Link } from "gatsby";
-import {useKeypress } from "../hooks/customHooks";
-
-
-
+import { useKeypress } from "../hooks/customHooks";
 
 export default function Template({
   data,
   pageContext, // this prop will be injected by the GraphQL query below.
 }) {
   const { next, previous } = pageContext;
-  const { site, markdownRemark } = data; // data.markdownRemark holds your post data
+  const { site, markdownRemark } = data; // data.markdownRemark holds post data
   const { siteMetadata } = site;
   const { frontmatter, html } = markdownRemark;
   const h = 360 * Math.random();
   const s = "70%";
   const l = "70%";
-  const hslaFun = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
-
-
-  let hsla = hslaFun;
+  const hsla = (opacity) => `hsla(${h},${s},${l}, ${opacity})`; // Collect all to a css color
 
   const nextPost = next && (
-    <Link to={next.frontmatter.path} style={{ }}>
-      <div className = "right-float"> ❯ </div>
+    <Link to={next.frontmatter.path} style={{}}>
+      <div className="right-float"> ❯ </div>
     </Link>
   );
 
   const previousPost = previous && (
     <Link to={previous.frontmatter.path} style={{}}>
-      <div className = "left-float"> ❮ </div>
+      <div className="left-float"> ❮ </div>
     </Link>
   );
 
-
+  // Allow users to use keys to toggle through portfolio.
   useKeypress(39, () => {
-    navigate(next && next.frontmatter.path )
+    navigate(next && next.frontmatter.path);
   });
 
   useKeypress(37, () => {
-    navigate(previous && previous.frontmatter.path )
+    navigate(previous && previous.frontmatter.path);
   });
 
   return (
@@ -58,8 +52,10 @@ export default function Template({
           {!frontmatter.thumbnail && <div className="post-thumbnail"></div>}
           {!!frontmatter.thumbnail && (
             <>
-              {" "}
-              <div className="next-previous-container"> {previousPost}  {nextPost}</div>
+              <div className="next-previous-container">
+                {" "}
+                {previousPost} {nextPost}
+              </div>
               <div
                 className="post-thumbnail"
                 style={{ backgroundImage: `url(${frontmatter.thumbnail})` }}
@@ -68,17 +64,11 @@ export default function Template({
                 className="post-preview-text-container"
                 style={{ backgroundColor: hsla(0.7) }}
               >
-
-
-              <h1 className="post-title">{frontmatter.title}</h1>
+                <h1 className="post-title">{frontmatter.title}</h1>
 
                 <div className="post-meta">{frontmatter.metaDescription}</div>
-
-
               </div>
-              <div>
-
-              </div>
+              <div></div>
             </>
           )}
           <div
