@@ -6,7 +6,7 @@ title: Brand Explorer
 metaDescription: An example of one of the many BI exploratory visualizations I
   created while working in finance.
 corporate: true
-thumbnail: /assets/screen-shot-2021-07-20-at-1.51.26-pm.png
+thumbnail: /assets/screen-shot-2021-11-27-at-3.00.51-pm.png
 ---
 While working in corporate finance my focus was on **alternative data**, which is essentially anything that isn't traditional financial (fundamental) data. This can include really diverse datasets including **geospatial**, **webscraped**, and **demographic**.
 
