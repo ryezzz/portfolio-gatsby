@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /portfolio/bugs
-date: 2021-11-15T20:59:57.073Z
+date: 2021-11-15T21:03:00.000Z
 title: Insect Decision-Making
 metaDescription: "Visualizing a model of behavior: d3.js, JavaScript"
 exploration: true
