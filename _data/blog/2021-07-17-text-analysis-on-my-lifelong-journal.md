@@ -9,9 +9,9 @@ thumbnail: /assets/screen-shot-2021-11-13-at-10.02.10-am.png
 ---
 I've kept a personal diary since middle school and the text in it is very much "stream of consciousness" and really, really tough to read. 
 
-In order to understand my journal and turn it into a cohesive story I've begun to visualize it. I'm starting by tracking word counts per entry over time and will eventually experiment with sentiment analyses.
+In order to understand my journal and turn it into a cohesive story I've begun to visualize it. I'm starting by tracking word counts per entry over time and will eventually experiment with sentiment analysis.
 
-In terms of process, cleaned this messy corpus of about 200,000 words using python and turned it into a dataset. I then visualized [my first iteration](https://public.tableau.com/app/profile/rye.zupancis/viz/ChildhoodJournalAnalysis/Overview?publish=yes) based on entry word count in Tableau and will post a d3 timeseries exploration shortly. Actual entries have been removed and only aggregations & simplifications are be visible. 
+In terms of process, cleaned this messy corpus of about 200,000 words using python and turned it into a dataset. I then visualized my first iteration based on entry word count in [Tableau](https://public.tableau.com/app/profile/rye.zupancis/viz/ChildhoodJournalAnalysis/Overview?publish=yes) and [d3](https://ryezzz.github.io/visualization-sketches/childhood-diary/). Actual entries have been removed and only aggregations & simplifications are be visible.
 
 ![](/assets/screen-shot-2021-11-13-at-10.03.03-am.png)
 
