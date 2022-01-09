@@ -5,7 +5,7 @@ date: 2022-01-09T18:14:24.807Z
 title: Childhood Diary Analysis
 metaDescription: An ongoing text analysis of my journal - D3, Python and Tableau
 exploration: true
-thumbnail: /assets/screen-shot-2022-01-09-at-1.45.01-pm.png
+thumbnail: /assets/screen-shot-2022-01-09-at-5.27.33-pm.png
 ---
 I've kept a personal diary since middle school and the text in it is very much "stream of consciousness" and really, really tough to read. 
 
