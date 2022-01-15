@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /portfolio/memorialgraph
-date: 2019-05-01T15:30:01.701Z
+date: 2022-01-15T17:24:53.681Z
 title: Memorialgraph
 metaDescription: A concept for recording personal and family history
 exploration: true
