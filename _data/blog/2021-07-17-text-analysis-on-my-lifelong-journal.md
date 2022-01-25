@@ -11,7 +11,7 @@ I've kept a personal diary since middle school and the text in it is very much "
 
 In order to understand my journal and turn it into a cohesive story I've begun to visualize it. I'm starting by tracking word counts per entry over time and will eventually experiment with sentiment analysis.
 
-In terms of process, I cleaned this messy corpus of about 200,000 words using python and turned it into a dataset. I then visualized my first iteration based on entry word count in [Tableau](https://public.tableau.com/app/profile/rye.zupancis/viz/ChildhoodJournalAnalysis/Overview?publish=yes) and created a [](https://ryezzz.github.io/visualization-sketches/childhood-diary-swarm-scroll/)[beeswarm scrollytelling](https://ryezzz.github.io/visualization-sketches/childhood-diary-swarm-scroll/) exploration using d3. Actual entries have been removed and only aggregations & simplifications are be visible. More iterations are on my [viz sketch github repo](https://github.com/ryezzz/visualization-sketches).
+In terms of process, I cleaned this messy corpus of about 200,000 words using python and turned it into a dataset. I then visualized my first iteration based on entry word count in [Tableau](https://public.tableau.com/app/profile/rye.zupancis/viz/ChildhoodJournalAnalysis/Overview?publish=yes) and created a [](https://ryezzz.github.io/visualization-sketches/childhood-diary-swarm-scroll/)[beeswarm scrollytelling](https://ryezzz.github.io/visualization-sketches/childhood-diary-swarm-scroll-drawing/) exploration using d3. Actual entries have been removed and only aggregations & simplifications are be visible. More iterations are on my [viz sketch github repo](https://github.com/ryezzz/visualization-sketches).
 
 ![](/assets/screen-shot-2021-11-13-at-10.03.03-am.png)
 
