@@ -15,6 +15,10 @@ In terms of process, I cleaned this messy corpus of about 200,000 words using py
 
 Actual entries have been removed and only aggregations & simplifications are be visible. More iterations are on my [viz sketch github repo](https://github.com/ryezzz/visualization-sketches).
 
+
+
+<iframe width="923" height="573" src="https://www.youtube.com/embed/UWi1IoWQojo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ![](/assets/screen-shot-2021-11-13-at-10.03.03-am.png)
 
 I really want to go deep into this analysis - it's so much fun! I've started writing my journal as a google form so it automatically generates a google sheet which can be connected live to my eventual app.
