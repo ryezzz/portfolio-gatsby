@@ -3,7 +3,7 @@ template: BlogPost
 path: /portfolio/user-analytics
 date: 2021-11-15T21:05:00.000Z
 title: Visualizing User Analytics
-metaDescription: Understanding WSJ Readership
+metaDescription: An app that helps journalists understand their readers
 corporate: true
 thumbnail: /assets/screen-shot-2021-11-11-at-3.06.52-pm.png
 ---
