@@ -663,7 +663,7 @@ and (min-width: 768px) {
 
 // theme-changer
 .theme-changer {
-  display: none;
+ display:none
 }
 body.dark {
   .gg-moon {
@@ -682,6 +682,7 @@ body.light {
 }
 // CSS.gg icons for sun and moon
 .gg-sun {
+  cursor: pointer;
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -705,6 +706,12 @@ body.light {
   box-shadow: inset 0 0 0 2px;
   border: 6px solid transparent
 }
+.gg-sun:hover {
+color: rgb(250, 250, 165);
+}
+.gg-moon:hover {
+  color: black;
+  }
 .gg-sun::after,
 .gg-sun::before {
   content: "";
@@ -731,13 +738,15 @@ body.light {
     border-radius: 50%
 }
 .gg-moon {
+  cursor: pointer;
     overflow: hidden;
     position: relative;
     transform: rotate(-135deg) scale(var(--ggs,1));
     width: 20px;
     height: 20px;
     border: 2px solid;
-    border-bottom-color: transparent
+    border-bottom-color: transparent;
+    color: gray;
 }
 .gg-moon::after {
     content: "";
