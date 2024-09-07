@@ -10,8 +10,11 @@ import {useKeypress } from "../hooks/customHooks";
 
 export default function Template({
   data,
+  path,
   pageContext, // this prop will be injected by the GraphQL query below.
 }) {
+
+  console.log("PAge datAzzzzz", path)
   const { next, previous } = pageContext;
   const { site, markdownRemark } = data; // data.markdownRemark holds your post data
   const { siteMetadata } = site;
@@ -81,7 +84,33 @@ export default function Template({
   </div>
     </Layout>
   );
+
+  
 }
+
+// export const pageQuery = graphql`
+//  query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//     markdownRemark(frontmatter: { path: { eq: "/portfolio/journal" } }) {
+//       html
+//       frontmatter {
+//         date(formatString: "MMMM DD, YYYY")
+//         path
+//         title
+//         thumbnail
+//         metaDescription
+//         corporate
+//         exploration
+//       }
+//     }
+//   }
+// `;
+
+
 
 export const pageQuery = graphql`
   query($path: String!) {
@@ -90,8 +119,8 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+    markdownRemark(frontmatter: { path: { regex: $path  } }) {
+      html,
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
@@ -104,3 +133,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+
