@@ -78,23 +78,32 @@ body.dark {
 }
 
 .btn {
-  font-family: Arial;
-  color: var(--primary-text-color);
-  font-size: 1em;
-  padding: 7px;
-  margin: 10px;
-  margin-right:10px;
-  margin-left:0px;
-  text-decoration: none;
-  background-color: var(--btn-bg);
+  // Base styles for btn
+  padding: 10px;
+  margin: 0 10px 0 0; 
+
+  border: 2px solid rgba(0,0,0,0);
+  background-color: var(--background-color);
+  color: var(--text-color);
   cursor: pointer;
-  border: none;
-  box-shadow: 3px 3px 12px rgba(0,0,0,.3);
+  // transition: background-color 0.3s;
+  font-size: 16px; // Ensure base font size is set
 
-}
+  &:hover {
+    background-color: var(--hover-background-color);
+  }
 
-.btn-selected{
-border-bottom: 2px solid var(--primary-color);
+  &-selected {
+    border: 2px solid rgba(0,0,0,0);
+
+    border-bottom: 1px solid  var(--primary-text-color);
+    background-color: var(--selected-background-color);
+    color: var(--selected-text-color);
+    padding: 10px ;
+    margin: 0 10px 0 0; 
+    font-size: 16px; // Ensure it inherits the font size from btn
+
+  }
 }
 
 
