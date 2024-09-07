@@ -1,34 +1,59 @@
-import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-import TypeOn from "../components/typeOn"
+import React, {useState} from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import TypeOn from './typeOn';
+import { getButtonClass } from './utils';
+
+const HeroHeader = (props) => {
+
+  const [selectedTab, setSelectedTab ] = useState("all");
+
+  const buttonData = [
+    { label: "All Projects", value: "all" },
+    { label: "Data Experiments", value: "exploration" },
+    { label: "Corporate Work", value: "corporate" }
+  ];
+  
 
 
-export default (props) => (
-  <StaticQuery
-    query={graphql`
-      query HeadingQuery {
-        site {
-          siteMetadata {
-            home {
-              title
-              description
-            }
+  const onSelect = (tabValue, tabId) => {
+    setSelectedTab(tabId);
+    props.useFilter(tabId)
+    // console.log("selectedTab", selectedTab)
+
+  }
+  const data = useStaticQuery(graphql`
+    query HeadingQuery {
+      site {
+        siteMetadata {
+          home {
+            title
+            description
           }
         }
       }
-    `}
-    render={data => (
-      <div className="hero-header">
-        <div className="headline">{data.site.siteMetadata.home.title}</div>
-        <div className="primary-content"> {TypeOn(data.site.siteMetadata.home.description)}</div>
+    }
+  `);
 
-            {/*    <Link to='/contact' className="button -primary">Get in touch &rarr;</Link>*/}
-            {/* <span className="tiny-text">Sort by</span> */}
-<div className="hero-button-group"><button className="btn" onClick={()=>props.useFilter("all")}>All Projects </button>
-            <button className="btn" onClick={()=>props.useFilter("exploration")}>Data Experiments </button>
-            <button className="btn" onClick={()=>props.useFilter("corporate")}>Corporate Work</button>
-            </div>
-      </div>
-    )}
-  />
-)
+  return (
+    <div className="hero-header">
+      <div className="headline">{data.site.siteMetadata.home.title}</div>
+      <div className="primary-content">{TypeOn(data.site.siteMetadata.home.description)}</div>
+
+      {/* <Link to='/contact' className="button -primary">Get in touch &rarr;</Link> */}
+      {/* <span className="tiny-text">Sort by</span> */}
+      <div className="hero-button-group">
+      {buttonData.map((button) => (
+        <button
+          key={button.value}
+          className={getButtonClass(button.value, selectedTab)}
+          onClick={() => onSelect("_", button.value)}
+        >
+          {button.label}
+        </button>
+      ))}
+    </div>
+    </div>
+  );
+};
+
+export default HeroHeader;

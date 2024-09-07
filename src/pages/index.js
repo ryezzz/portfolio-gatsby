@@ -48,6 +48,7 @@ const IndexPage = (
     }
   };
 
+
   const [pagerDispatch] = useReducer(pageReducer, { page: 0 });
   const [imgData] = useReducer(imgReducer, {
     images: [],
@@ -70,6 +71,7 @@ const IndexPage = (
 
   const ExsitingPosts = FilteredPosts.length ? FilteredPosts: UnfilteredPosts;
 
+  // console.log("allMarkdownRemark", UnfilteredPosts)
 
   const Posts = ExsitingPosts.map((edge) => (
     <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
@@ -86,7 +88,7 @@ const IndexPage = (
           <meta name="description" content={site.siteMetadata.description} />
         </Helmet>
         <Masonry
-          breakpointCols={2}
+          // breakpointCols={2}
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
@@ -108,31 +110,32 @@ const IndexPage = (
 
 export default IndexPage;
 export const pageQuery = graphql`
-  query indexPageQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
+ query indexPageQuery {
+  site {
+    siteMetadata {
+      title
+      description
     }
-    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {path: {regex: "\\/portfolio/"}, title: {}}, children: {}}) {
-
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-            thumbnail
-            corporate
-            exploration
-            metaDescription
-
-          }
+  }
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {path: {regex: "\\/portfolio/"}, title: {}}, children: {}}
+  ) {
+    edges {
+      node {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          path
+          title
+          thumbnail
+          corporate
+          exploration
+          metaDescription
         }
       }
     }
   }
+}
 `;

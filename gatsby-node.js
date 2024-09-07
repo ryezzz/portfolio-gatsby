@@ -9,60 +9,62 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resultPage = await graphql(`
     {
-      allMarkdownRemark(
-        sort: {order: DESC, fields: frontmatter___date}, filter: {frontmatter: {path: {regex: "\\/pages/"}, title: {}}, children: {}}
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              path
-            }
-          }
-          next {
-            frontmatter {
-              path
-              title
-            }
-          }
-          previous {
-            frontmatter {
-              path
-              title
-            }
-          }
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {path: {regex: "/pages/"}, title: {}}, children: {}}
+  ) {
+    edges {
+      node {
+        id
+        frontmatter {
+          path
         }
       }
-    }
-  `);
-
-  const resultPortfolio = await graphql(`
-  {
-    allMarkdownRemark(
-      sort: {order: DESC,fields: frontmatter___date}, filter: {frontmatter: {path: {regex: "\\/portfolio/"}, title: {}}, children: {}}
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-          }
+      next {
+        frontmatter {
+          path
+          title
         }
-        next {
-          frontmatter {
-            path
-            title
-          }
-        }
-        previous {
-          frontmatter {
-            path
-            title
-          }
+      }
+      previous {
+        frontmatter {
+          path
+          title
         }
       }
     }
   }
+}
+  `);
+
+  const resultPortfolio = await graphql(`
+  {
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {path: {regex: "/portfolio/"}, title: {}}, children: {}}
+  ) {
+    edges {
+      node {
+        id
+        frontmatter {
+          path
+        }
+      }
+      next {
+        frontmatter {
+          path
+          title
+        }
+      }
+      previous {
+        frontmatter {
+          path
+          title
+        }
+      }
+    }
+  }
+}
 `);
 
   if (resultPortfolio.errors) {
