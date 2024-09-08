@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /portfolio/user-analytics
-date: 2021-11-15T21:05:00.000Z
+date: 2024-09-05T20:05:00.000Z
 title: Visualizing User Analytics
 metaDescription: An app that helps journalists understand their readers
 corporate: true
