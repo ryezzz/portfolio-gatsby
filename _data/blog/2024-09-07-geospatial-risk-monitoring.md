@@ -23,15 +23,11 @@ I used Maplibre, Mapbox, React, and Typescript for the front end, while I develo
 **User Research and Production Build:** \
 After we tested the prototype on customers and made modifications based on that user research, our engineering team and I used the foundation I built to scale into our production environment. 
 
-In the end we moved away from Mapbox and only used Maplibre for cost and flexibility and moved to Postgres GL to host our map layers and shapes.
-
-
+In the end we moved away from Mapbox and only used Maplibre for cost and flexibility and moved to PostGIS and S3 to host our map layers and shapes.
 
 **User Interface:** Supplementary visualizations and config in the sidebar.
 
 ![Wildfire](/assets/1695301568808.jpeg "Wildfire risk and events. Color was reinforced with Iconography for accessibility.")
-
-
 
 **Clearly Defined Event Impact Zones:**
 
@@ -39,15 +35,9 @@ In the end we moved away from Mapbox and only used Maplibre for cost and flexibi
 
 ![Earthquake](/assets/1695301564683.jpeg "Impact area of Earthquake on Click")
 
-
-
 **Risk layering:** Color was reinforced with Iconography and tables for accessibility.
 
-
-
 ![](/assets/1695301564892.jpeg)
-
- 
 
 Not shown:
 
