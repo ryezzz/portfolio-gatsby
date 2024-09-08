@@ -18,6 +18,4 @@ Data pulled from survey my company conducted of global leaders in the supply cha
 
 This project is a few years old, but one of my few publically available professional projects.
 
-Waffle charts are excellent for survey data!
-
-![](/assets/screenshot-2024-09-08-at-1.07.58 pm.png)
+![](/assets/screenshot-2024-09-08-at-1.08.57 pm.png)
