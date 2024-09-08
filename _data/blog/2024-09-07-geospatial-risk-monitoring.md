@@ -11,7 +11,7 @@ thumbnail: /assets/screenshot-2024-09-08-at-2.19.32 pm.png
 At my current company, an innovative supply chain startup, my team and I developed a geospatial risk exploration experience that enables companies to track and monitor risks within their suppliers. 
 
 **Project Importance:**\
-In a time of increased climate-caused catastrophes, this map and associated sub-visualizations provides companies with a way of anticipating potential future disasters that not only have devastating human impact but financial impact for our customers.
+In a time of increased climate-caused catastrophes, this map and associated sub-visualizations provides companies with a way of anticipating potential future disasters that not only have devastating human impact but financial impact.
 
 **Design, Prototyping and Data Modeling:** \
 Having worked a lot with spatial data, I was in the lead designer and visualization engineer on this project and was heavily involved at every stage.
