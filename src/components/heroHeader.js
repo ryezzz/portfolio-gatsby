@@ -10,7 +10,7 @@ const HeroHeader = (props) => {
   const buttonData = [
     { label: "All Projects", value: "all" },
     { label: "Data Experiments", value: "exploration" },
-    { label: "Corporate Work", value: "corporate" }
+    { label: "Professional Work", value: "corporate" }
   ];
   
 

@@ -20,7 +20,7 @@ body.light {
   --title-text: #10072b;
   --primary-color-translucent: rgba(255, 255, 255, .6);
   --primary-text-color: #18122b;;
-  --featured-bg: #a600ff;
+  --featured-bg: #fff;
   --featured-text: #fff;
   --secondary-color: #10072b;
   --background: #fff;
@@ -40,19 +40,19 @@ body.light {
   --input-bg: var(--background);
 }
 body.dark {
-  --background-opacity:.4 ;
+  --background-opacity:.3 ;
   --link-color: rgb(255, 208, 0);
   --black-white: white;
   --card-outline: rgb(4, 130, 255);
-  --primary-color: rgba(250,250,250, );
+  --primary-color: ebebeb;
   --shadow-color-translucent: rgba(0, 0, 0, 0.9);
-  --primary-color-translucent: rgba(217, 214, 255, .2);
+  --primary-color-translucent: rgba(59, 61, 89, .4);
   --highlight-color-translucent:  rgb(4, 130, 255);
   --card-outline: rgba(255, 255, 255, .2);
   --title-text: #000;
-  --primary-text-color: #fff;
+  --primary-text-color: #ebebeb;
   --featured-bg:  rgb(4, 130, 255);
-  --featured-text: #fff;
+  --featured-text: #ebebeb;
   --secondary-color: #66578d;
   --background: rgb(19, 17, 34);
   --text-color: rgba(255,255,255,0.88);
@@ -197,7 +197,7 @@ a {
   align-items: center;
   font-weight: 500;
   a {
-    color: #888;
+    color: var(--primary-text-color);
     text-decoration: none;
     margin: 0 8px 0;
     &[aria-current] {
