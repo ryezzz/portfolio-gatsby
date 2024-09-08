@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /portfolio/scrolling
-date: 2024-09-04T17:03:27.447Z
+date: 2024-09-05T21:35:00.000Z
 title: Scrolling Survey Visualization
 metaDescription: A scrollytelling site for a supply chain survey
 thumbnail: /assets/screenshot-2024-09-08-at-2.23.11 pm.png
