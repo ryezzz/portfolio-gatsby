@@ -6,7 +6,7 @@ title: "Geospatial Risk Monitoring "
 metaDescription: Exploring catastrophic risk and events
 exploration: false
 corporate: true
-thumbnail: /assets/1695301565503.jpeg
+thumbnail: /assets/screenshot-2024-09-08-at-1.19.02 pm.png
 ---
 At my current company, an innovative supply chain startup, my team and I developed a geospatial risk exploration experience that enables companies to track and monitor risks within their suppliers. 
 
