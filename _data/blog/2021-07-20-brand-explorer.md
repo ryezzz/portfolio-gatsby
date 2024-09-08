@@ -1,7 +1,7 @@
 ---
 template: BlogPost
 path: /portfolio/brand-explorer
-date: 2021-11-15T21:02:40.422Z
+date: 2024-09-04T16:04:53.497Z
 title: Brand Explorer
 metaDescription: An example of one of the many BI exploratory visualizations I
   created while working in finance.
