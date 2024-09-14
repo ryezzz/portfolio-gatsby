@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Helmet from "react-helmet";
 import { graphql, navigate } from "gatsby";
 import Layout from "../components/layout/layout";
@@ -29,6 +29,20 @@ export default function Template({
       <div className="left-float"> ❮ </div>
     </Link>
   );
+  useEffect(() => {
+    const handleImageClick = (event) => {
+      if (event.target.tagName === 'IMG') {
+        console.log(event.target);
+      }
+    };
+
+    document.addEventListener('click', handleImageClick);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('click', handleImageClick);
+    };
+  }, []);
 
   // Allow users to use keys to toggle through portfolio.
   useKeypress(39, () => {
@@ -98,6 +112,8 @@ export const pageQuery = graphql`
         metaDescription
         corporate
         exploration
+        highlight
+
       }
     }
   }

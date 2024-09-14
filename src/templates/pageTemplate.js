@@ -88,27 +88,6 @@ export default function Template({
   
 }
 
-// export const pageQuery = graphql`
-//  query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     markdownRemark(frontmatter: { path: { eq: "/portfolio/journal" } }) {
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         path
-//         title
-//         thumbnail
-//         metaDescription
-//         corporate
-//         exploration
-//       }
-//     }
-//   }
-// `;
 
 
 
@@ -128,8 +107,8 @@ export const pageQuery = graphql`
         thumbnail
         metaDescription
         corporate
-        highlight
         exploration
+        highlight
       }
     }
   }

@@ -72,7 +72,7 @@ collections:
         name: corporate
         widget: boolean
         required: false
-      - label: "Highlight Item"
+      - label: Highlight
         name: highlight 
         widget: boolean
         required: false

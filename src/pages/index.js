@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
 import PostLink from "../components/post-link";
-import HeroHeader from "../components/heroHeader";
+import {HeroHeader, HeaderFilter} from "../components/heroHeader";
 import Masonry from "react-masonry-css";
 import { useInfiniteScroll, useLazyLoading, hsla } from "../hooks/customHooks";
 
@@ -82,11 +82,23 @@ const IndexPage = (
   return (
     <>
       <Layout hsla={hsla}>
+
         <HeroHeader hsla={hsla} useFilter={useFilter}></HeroHeader>
+
+        {Posts.map((post, index) => {
+            const isHighlight = post.props.post.frontmatter.highlight;
+            return (
+              <div key={index}>
+                {isHighlight && <div>{post}</div>}
+              </div>
+            );
+          })}
         <Helmet>
           <title>{site.siteMetadata.title}</title>
           <meta name="description" content={site.siteMetadata.description} />
         </Helmet>
+        <HeaderFilter hsla={hsla} useFilter={useFilter}></HeaderFilter>
+
         <Masonry
           // breakpointCols={2}
           breakpointCols={breakpointColumnsObj}
@@ -94,11 +106,13 @@ const IndexPage = (
           columnClassName="my-masonry-grid_column"
         >
           {Posts.map((post, index) => {
+            const isHighlight = post.props.post.frontmatter.highlight;
             return (
               <div key={index}>
+                {!isHighlight && 
                 <div className="card-body ">
                   {post}
-                </div>
+                </div>}
               </div>
             );
           })}
@@ -131,8 +145,8 @@ export const pageQuery = graphql`
           title
           thumbnail
           corporate
-          highlight
           exploration
+          highlight
           metaDescription
         }
       }
