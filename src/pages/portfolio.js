@@ -20,7 +20,6 @@ const PortfolioPage = (
     },
   },props
 ) => {
-  console.log("props from index", props);
   const imgReducer = (state, action) => {
     switch (action.type) {
       case "STACK_IMAGES":
@@ -108,6 +107,7 @@ export const pageQuery = graphql`
           title
           thumbnail
           corporate
+          highlight
           exploration
         }
       }

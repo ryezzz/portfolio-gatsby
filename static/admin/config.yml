@@ -72,6 +72,10 @@ collections:
         name: corporate
         widget: boolean
         required: false
+      - label: "Highlight Item"
+        name: highlight 
+        widget: boolean
+        required: false
       - label: Featured Image
         name: thumbnail
         widget: image

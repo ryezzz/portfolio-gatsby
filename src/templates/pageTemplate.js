@@ -128,6 +128,7 @@ export const pageQuery = graphql`
         thumbnail
         metaDescription
         corporate
+        highlight
         exploration
       }
     }

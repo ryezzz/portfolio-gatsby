@@ -131,6 +131,7 @@ export const pageQuery = graphql`
           title
           thumbnail
           corporate
+          highlight
           exploration
           metaDescription
         }
