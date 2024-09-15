@@ -2,8 +2,8 @@
 template: BlogPost
 path: /portfolio/risk-map
 date: 2024-09-07T22:23:12.151Z
-title: "Geospatial Risk Monitoring "
-metaDescription: Exploring catastrophic risk and events
+title: "Geospatial Risk Monitoring Experience "
+metaDescription: "Using interactivity, motion, color and shape to analyze catastrophic risk. "
 exploration: false
 corporate: true
 highlight: true
