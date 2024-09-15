@@ -2,10 +2,10 @@
 template: BlogPost
 path: /portfolio/scrolling
 date: 2024-09-05T21:35:00.000Z
-title: Scrolling Survey Visualization
-metaDescription: A scrollytelling site for a supply chain survey
+title: Scrollytelling UX for a Supply Chain Survey
+metaDescription: Allows users to explore data through motion and storytelling.
 corporate: true
-thumbnail: /assets/screenshot-2024-09-08-at-2.23.11 pm.png
+thumbnail: /assets/screenshot-2024-09-15-at-11.34.04 am.png
 ---
 [View visualization here](https://insights.interos.ai/2022-survey-report/)
 
