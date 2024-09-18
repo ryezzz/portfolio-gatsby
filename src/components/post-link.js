@@ -43,10 +43,10 @@ const PostLink = (props) => {
           </article>
         </>
       ) : (
-        <article className="card">
+        <article className="card hover:bg-white  rounded-lg group">
           <Link to={post.frontmatter.path}>
             {!!post.frontmatter.thumbnail && (
-              <div className="img-container">
+              <div className="img-container rounded-t-lg ">
                 <img
                   class="preview-img"
                   src={post.frontmatter.thumbnail}
@@ -54,12 +54,12 @@ const PostLink = (props) => {
                 />
               </div>
             )}
-            <header className="post-title-container">
+            <header className="post-title-container ">
               <div
                 style={{ backgroundColor: hsla }}
-                className="post-preview-text-container"
+                className="post-preview-text-container rounded-b-lg"
               >
-                <h2 className="post-title">
+                <h2 className="post-title font-semibold rounded-b-lg">
                   <Link to={post.frontmatter.path} className="post-link">
                     {post.frontmatter.title}
                   </Link>

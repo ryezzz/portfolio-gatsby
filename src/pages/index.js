@@ -1,4 +1,4 @@
-import React, { useState, useRef, useReducer } from "react";
+import React, { useState, useRef, useReducer, useEffect } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
@@ -69,15 +69,16 @@ const IndexPage = (
 
   const FilteredPosts = UnfilteredPosts.filter((edge) => edge.node.frontmatter[filter]) ;
 
-  const ExsitingPosts = FilteredPosts.length ? FilteredPosts: UnfilteredPosts;
 
-  // console.log("allMarkdownRemark", UnfilteredPosts)
+  const [loaded, setLoaded] = useState(false);
 
-  const Posts = ExsitingPosts.map((edge) => (
-    <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
-  ));
-
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100); //delay
+  
+    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+  }, []);
 
   return (
     <>
@@ -85,34 +86,43 @@ const IndexPage = (
 
         <HeroHeader hsla={hsla} useFilter={useFilter}></HeroHeader>
 
-        {Posts.map((post, index) => {
-            const isHighlight = post.props.post.frontmatter.highlight;
+        {/* {edges.map((edge, index) => {
+            const isHighlight = edge.node.frontmatter.highlight;
+            {console.log("posts", edge)}
             return (
-              <div key={index}>
-                {isHighlight && <div>{post}</div>}
+              <div className="" key={index}>
+                {isHighlight && 
+                <div className="card-body ">
+                  <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
+                </div>}
               </div>
             );
-          })}
+          })} */}
         <Helmet>
           <title>{site.siteMetadata.title}</title>
           <meta name="description" content={site.siteMetadata.description} />
         </Helmet>
-        <HeaderFilter hsla={hsla} useFilter={useFilter}></HeaderFilter>
+          <HeaderFilter hsla={hsla} useFilter={useFilter}></HeaderFilter>
 
         <Masonry
           // breakpointCols={2}
           breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
+          className="my-masonry-grid "
+          columnClassName="my-masonry-grid_column "
         >
-          {Posts.map((post, index) => {
-            const isHighlight = post.props.post.frontmatter.highlight;
+          {edges.map((edge, index) => {
+
+const itemFilteredOut = !edge.node.frontmatter[filter] && filter !== "all";
             return (
               <div key={index}>
-                {!isHighlight && 
-                <div className="card-body ">
-                  {post}
-                </div>}
+              
+                 <div className={`${itemFilteredOut || !loaded ? 
+                 "  transform opacity-0 translate-y-[400px] p-0 gap-0 m-0 max-h-0" : 
+                 " transform opacity-100 translate-y-0 max-h-[1000px]"} 
+                 transition-all duration-[500ms] ease-in-out card-body overflow-hidden`}             
+                 style={{ transitionDelay: `${(edges.length - 1 - index) * 0}ms` }}>
+    <PostLink hsla={hsla} key={edge.node.id} post={edge.node} />
+  </div>
               </div>
             );
           })}
